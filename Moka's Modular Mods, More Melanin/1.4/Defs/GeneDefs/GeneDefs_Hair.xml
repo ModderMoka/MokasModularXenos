@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<GeneDef>
+		<defName>Hair_Moka_AfroTexture</defName>
+		<label>afro texture</label>
+		<description>Carriers of this gene have any of the afrotextured hairs.</description>
+		<iconPath>UI/GeneIcons/AfroTextureHair</iconPath>
+		<displayOrderInCategory>60</displayOrderInCategory>
+	    <selectionWeightFactorDarkSkin>1</selectionWeightFactorDarkSkin>
+		<hairTagFilter>
+			<whitelist>true</whitelist>
+			<tags>
+				<li>AfroTexture</li>
+			</tags>
+		</hairTagFilter>
+		<symbolPack>
+			<prefixSymbols>
+				<li><symbol>afro</symbol></li>
+				<li><symbol>bantu</symbol></li>
+				<li><symbol>dread</symbol></li>
+				<li><symbol>coil</symbol></li>
+				<li><symbol>braid</symbol></li>
+			</prefixSymbols>
+			<suffixSymbols>
+				<li><symbol>lock</symbol></li>
+				<li><symbol>loc</symbol></li>
+				<li><symbol>lox</symbol></li>
+				<li><symbol>tie</symbol></li>
+				<li><symbol>knot</symbol></li>
+			</suffixSymbols>
+		</symbolPack>
+		<biostatCpx>0</biostatCpx>
+		<displayCategory>Cosmetic</displayCategory>
+		<iconColor>(0.75, 0.75, 0.75)</iconColor>
+			<exclusionTags>
+				<li>HairStyle</li>
+			</exclusionTags>
+	</GeneDef>
+	
+	<GeneDef Name="MokaBloodyHairBase" ParentName="GeneHairColorBase" Abstract = "true">
+		<label>bloody hair</label>
+		<selectionWeight>0.04</selectionWeight>
+		<randomBrightnessFactor>0</randomBrightnessFactor>
+		<symbolPack>
+			<prefixSymbols>
+				<li><symbol>hemo</symbol></li>
+				<li><symbol>blood</symbol></li>
+			</prefixSymbols>
+			<suffixSymbols>
+				<li><symbol>thirst</symbol></li>
+				<li><symbol>bleed</symbol></li>
+			</suffixSymbols>
+		</symbolPack>
+		
+	</GeneDef>
+
+	<GeneDef ParentName="MokaBloodyHairBase">
+		<defName>Moka_HairColor_SangBloody</defName>
+		<hairColorOverride>(149,40,97)</hairColorOverride>
+		<displayOrderInCategory>2510</displayOrderInCategory>
+		
+	</GeneDef>
+	
+	<GeneDef ParentName="MokaBloodyHairBase">
+		<defName>Moka_HairColor_DarkSangBloody</defName>
+		<hairColorOverride>(126,36,68)</hairColorOverride>
+		<displayOrderInCategory>2511</displayOrderInCategory>
+		
+	</GeneDef>
+	
+	<GeneDef ParentName="MokaBloodyHairBase">
+		<defName>Moka_HairColor_Bloody</defName>
+		<hairColorOverride>(155,36,44)</hairColorOverride>
+		<displayOrderInCategory>2512</displayOrderInCategory>
+		
+	</GeneDef>
+	
+	<GeneDef ParentName="MokaBloodyHairBase">
+		<defName>Moka_HairColor_PaleBloody</defName>
+		<hairColorOverride>(164,124,116)</hairColorOverride>
+		<displayOrderInCategory>2513</displayOrderInCategory>
+		
+	</GeneDef>
+	
+	<GeneDef ParentName="MokaBloodyHairBase">
+		<defName>Moka_HairColor_RichBloody</defName>
+		<hairColorOverride>(223, 57, 8)</hairColorOverride>
+		<displayOrderInCategory>2514</displayOrderInCategory>
+		
+	</GeneDef>
+	
+ </Defs>

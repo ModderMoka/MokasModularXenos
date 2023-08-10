@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<XenotypeDef>
+		<defName>Moka_Baseloc</defName>
+		<label>baseloc</label>
+		<description>Once a niche product of Melan Inc. on a faraway Rimworld, the Baseloc are now spread across the rim as a less popular alternative to the Baseliner, and the gateway to a new set line of Baseloc spinoffs, collectively known as Lox, developed by Melan Inc. outposts all over the rim. today, outside of sprawling Urbworlds where they continue to proliferate, Baseloc have found themselves as either the minority in more mixed colonies or as the dominant influence in factions populated by other Melan Inc. creations.</description>
+		<descriptionShort>A legacy product of Melan Inc., now the start of a new line of Loc-based xenotypes and forms </descriptionShort>
+		<iconPath>UI/Xenotypes/Baseloc</iconPath>
+		<inheritable>true</inheritable>
+		<combatPowerFactor>1</combatPowerFactor>
+		<displayPriority>100</displayPriority>
+		<genes>
+			<li>Hair_Moka_AfroTexture</li>
+			
+			<li>Moka_Brown</li>
+			<li>Moka_Caramel</li>
+			<li>Moka_Chestnut</li>
+			<li>Moka_Coconut</li>
+			<li>Moka_Dark_Gold</li>
+			<li>Moka_Light_Brown</li>
+			<li>Moka_Peach</li>
+			<li>Moka_Sunrise</li>
+			<li>Moka_Tanned</li>
+			<li>Moka_Yellowish_Brown</li>
+			<li>Moka_Bole</li>
+			<li>Moka_Brown_Coffee</li>
+			<li>Moka_Burnt_Brown</li>
+			<li>Moka_Burnt_Umber</li>
+			<li>Moka_Dark_Brown</li>
+			<li>Moka_Dark_Olive</li>
+			<li>Moka_Liver_Brown</li>
+			<li>Moka_Reddish_Brown</li>
+			<li>Moka_Dark_Reddish_Brown</li>
+			<li>Moka_Royal_Brown</li>
+		</genes>
+	</XenotypeDef>
+
+	<XenotypeDef>
+		<defName>Moka_Wildlox</defName>
+		<label>wildlox</label>
+		<description>Racism is no new feat to residents of the Rim. This far out on the Rim, a number of melanated Baseliners allied to protect themselves which gave birth to a new set of Baseliners from which other Xenotypes then sstemmed from and added to.</description>
+		<descriptionShort>The roots of Basenegro isolation are long forgotten, but regardless they tend to live apart from other pawns.</descriptionShort>
+		<iconPath>UI/Xenotypes/Wildlox</iconPath>
+		<inheritable>true</inheritable>
+		<combatPowerFactor>1.5</combatPowerFactor>
+		<genes>
+			<li>AnimalWarcall</li>
+			<li>MoveSpeed_Quick</li>
+			<li>NakedSpeed</li>
+			<li>Aggression_Aggressive</li>
+			<li>KindInstinct</li>
+			<li>Sleepy</li>
+			<li>Libido_High</li>
+			
+			<li MayRequire="Rooboid.Minotaur">RBM_BovineTemper</li>
+			<li MayRequire="Rooboid.Minotaur">RBM_PeriodicLactation</li>
+			<li MayRequire="Rooboid.Minotaur">RBM_EstrousCycle</li>
+			<li MayRequire="Rooboid.Minotaur">RBM_UnguligradeLegs</li>
+
+			<li MayRequire="Rooboid.Satyr">RBSF_HorizontalPupils</li>
+			<li MayRequire="Rooboid.Satyr">RBSF_GoatHorns</li>
+
+			<li>Hair_Moka_AfroTexture</li>
+			<li>Beard_BushyOnly</li>
+			<li>Beard_Always</li>
+			<li>Body_Standard</li>
+			<li>Body_Hulk</li>
+			<li>Moka_Brown</li>
+			<li>Moka_Caramel</li>
+			<li>Moka_Chestnut</li>
+			<li>Moka_Coconut</li>
+			<li>Moka_Dark_Gold</li>
+			<li>Moka_Light_Brown</li>
+			<li>Moka_Peach</li>
+			<li>Moka_Sunrise</li>
+			<li>Moka_Tanned</li>
+			<li>Moka_Yellowish_Brown</li>
+			<li>Moka_Bole</li>
+			<li>Moka_Brown_Coffee</li>
+			<li>Moka_Burnt_Brown</li>
+			<li>Moka_Burnt_Umber</li>
+			<li>Moka_Dark_Brown</li>
+			<li>Moka_Dark_Olive</li>
+			<li>Moka_Liver_Brown</li>
+			<li>Moka_Reddish_Brown</li>
+			<li>Moka_Dark_Reddish_Brown</li>
+			<li>Moka_Royal_Brown</li>
+			<li>StrongStomach</li>
+			<li>Learning_Slow</li>
+			<li>Tail_Smooth</li>
+			<li>AptitudeTerrible_Mining</li>
+			<li>AptitudeRemarkable_Animals</li>
+			<li>AptitudeTerrible_Intellectual</li>
+		</genes>
+	</XenotypeDef>
+
+	<XenotypeDef>
+		<defName>Moka_Pawloc</defName>
+		<label>pawloc</label>
+		<description>Racism is no new feat to residents of the Rim. This far out on the Rim, a number of melanated Baseliners allied to protect themselves which gave birth to a new set of Baseliners from which other Xenotypes then sstemmed from and added to.</description>
+		<descriptionShort>The roots of Basenegro isolation are long forgotten, but regardless they tend to live apart from other pawns.</descriptionShort>
+		<iconPath>UI/Xenotypes/Pawloc</iconPath>
+		<inheritable>true</inheritable>
+		<combatPowerFactor>3</combatPowerFactor>
+		<genes>
+			<li>MoveSpeed_Quick</li>
+			<li>Aggression_HyperAggressive</li>
+			<li>MeleeDamage_Strong</li>
+			<li>Beauty_Ugly</li>
+			<li>Hair_Moka_AfroTexture</li>
+			<li>Beard_NoBeardOnly</li>
+			
+			<li>Body_Standard</li>
+			<li>Body_Hulk</li>
+
+			<li>Hair_SnowWhite</li>
+			<li>Hair_LightTeal</li>
+			<li>Hair_LightGreen</li>
+			<li>Hair_Pink</li>
+			<li>Hair_LightPurple</li>
+			<li>Hair_BrightRed</li>
+
+			<li>Moka_Brown</li>
+			<li>Moka_Caramel</li>
+			<li>Moka_Chestnut</li>
+			<li>Moka_Coconut</li>
+			<li>Moka_Dark_Gold</li>
+			<li>Moka_Light_Brown</li>
+			<li>Moka_Peach</li>
+			<li>Moka_Sunrise</li>
+			<li>Moka_Tanned</li>
+			<li>Moka_Yellowish_Brown</li>
+			<li>Moka_Bole</li>
+			<li>Moka_Brown_Coffee</li>
+			<li>Moka_Burnt_Brown</li>
+			<li>Moka_Burnt_Umber</li>
+			<li>Moka_Dark_Brown</li>
+			<li>Moka_Dark_Olive</li>
+			<li>Moka_Liver_Brown</li>
+			<li>Moka_Reddish_Brown</li>
+			<li>Moka_Dark_Reddish_Brown</li>
+			<li>Moka_Royal_Brown</li>
+			
+			<li MayRequire="vanillaracesexpanded.sanguophage">VRE_Talons</li>			
+			<li MayRequire="vanillaracesexpanded.hussar">VREH_Arrogant</li>
+
+			<li>AptitudeRemarkable_Melee</li>
+			<li>AptitudeTerrible_Mining</li>
+		</genes>
+	</XenotypeDef>
+
+</Defs>
