@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <ChemicalDef>
+        <defName>Mystum</defName>
+        <label>mystum</label>
+        <addictionHediff>MystumAddiction</addictionHediff>
+        <toleranceHediff>MystumTolerance</toleranceHediff>
+        <onGeneratedAddictedToleranceChance>0.2</onGeneratedAddictedToleranceChance>
+        <onGeneratedAddictedEvents>
+            <li>
+                <hediff>ChemicalDamageModerate</hediff>
+                <chance>0.12</chance>
+                <partsToAffect>
+                    <li>Kidney</li>
+                    <li>Brain</li>
+                </partsToAffect>
+            </li>
+        </onGeneratedAddictedEvents>
+        <geneToleranceBuildupFactorResist>0.5</geneToleranceBuildupFactorResist>
+        <geneToleranceBuildupFactorImmune>0</geneToleranceBuildupFactorImmune>
+        <geneOverdoseChanceFactorResist>0.5</geneOverdoseChanceFactorResist>
+        <geneOverdoseChanceFactorImmune>0</geneOverdoseChanceFactorImmune>
+    </ChemicalDef>
+      
+    <NeedDef ParentName="DrugAddictionNeedBase">
+        <defName>MystumChemical</defName>
+        <needClass>Need_Chemical</needClass>
+        <label>mystum</label>
+        <description>Because of a mystum addiction, this person needs to regularly consume the drug to avoid withdrawal symptoms.</description>
+        <listPriority>50</listPriority>
+    </NeedDef>
+
+    <HediffDef ParentName="DrugToleranceBase">
+        <defName>MystumTolerance</defName>
+        <label>mystum tolerance</label>
+        <description>A built-up tolerance to mystum. The more severe this tolerance is, the more mystum-based drugs like myst tea or myst puff it takes to get the same effect.</description>
+        <comps>
+            <li Class="HediffCompProperties_SeverityPerDay">
+                <severityPerDay>-0.015</severityPerDay>
+            </li>
+            <li Class="HediffCompProperties_DrugEffectFactor">
+                <chemical>Mystum</chemical>
+            </li>
+        </comps>
+        <hediffGivers>
+            <li Class="HediffGiver_RandomDrugEffect">
+                <hediff>ChemicalDamageModerate</hediff>
+                <severityToMtbDaysCurve>
+                    <points>
+                        <li>(0.45, 99999)</li>
+                        <li>(0.5, 180)</li>
+                        <li>(1, 135)</li>
+                    </points>
+                </severityToMtbDaysCurve>
+                <partsToAffect>
+                    <li>Kidney</li>
+                    <li>Brain</li>
+                </partsToAffect>
+            </li>
+        </hediffGivers>
+    </HediffDef>
+      
+    <HediffDef ParentName="AddictionBase">
+        <defName>MystumAddiction</defName>
+        <label>mystum addiction</label>
+        <description>A chemical addiction to mystum. Long-term use of mystum has caused neurological adaptations at the cellular level, so the brain can no longer function properly without the drug.
+    \nWithout regular doses of mystum from myst drugs, withdrawal symptoms will begin. However, extended abstinence will force the brain to adapt back to its normal state, resolving the addiction.</description>
+        <hediffClass>Hediff_Addiction</hediffClass>
+        <causesNeed>MystumChemical</causesNeed>
+        <comps>
+            <li Class="HediffCompProperties_SeverityPerDay">
+                <severityPerDay>-0.0333</severityPerDay>
+                <showDaysToRecover>true</showDaysToRecover>
+            </li>
+        </comps>
+        <stages>
+            <li>
+            </li>
+            <li>
+                <label>withdrawal</label>
+                <socialFightChanceFactor>1.0</socialFightChanceFactor>
+                <statOffsets>
+                    <RestFallRateFactor>0.2</RestFallRateFactor>
+                </statOffsets>
+                <capMods>
+                    <li>
+                        <capacity>Consciousness</capacity>
+                        <offset>-0.15</offset>
+                    </li>
+                    <li>
+                        <capacity>Moving</capacity>
+                        <offset>-0.15</offset>
+                    </li>
+                    <li>
+                        <capacity>Manipulation</capacity>
+                        <offset>-0.15</offset>
+                    </li>
+                </capMods>
+                <mentalStateGivers>
+                    <li>
+                        <mentalState>Binging_DrugMajor</mentalState>
+                        <mtbDays>40</mtbDays>
+                    </li>
+                    <li>
+                        <mentalState>Wander_Psychotic</mentalState>
+                        <mtbDays>10</mtbDays>
+                    </li>
+                </mentalStateGivers>
+            </li>
+        </stages>
+    </HediffDef>
+    
+    <ThoughtDef>
+        <defName>MystumWithdrawal</defName>
+        <workerClass>ThoughtWorker_Hediff</workerClass>
+        <hediff>MystumAddiction</hediff>
+        <validWhileDespawned>true</validWhileDespawned>
+        <developmentalStageFilter>Baby, Child, Adult</developmentalStageFilter>
+        <stages>
+            <li>
+                <visible>false</visible>
+            </li>
+            <li>
+                <label>mystum withdrawal</label>
+                <description>I've been disconnected from the universe for so long, I feel so small right now.</description>
+                <baseMoodEffect>-20</baseMoodEffect>
+            </li>
+        </stages>
+    </ThoughtDef>    
+    
+</Defs>

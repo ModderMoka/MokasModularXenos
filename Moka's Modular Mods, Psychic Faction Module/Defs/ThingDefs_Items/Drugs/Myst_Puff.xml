@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <ThingDef ParentName="MakeableDrugBase">
+        <defName>MystPuff</defName>
+        <label>myst puff joint</label>
+        <description>Burning anima fibers with smokeleaf leaves not only provides a similar high to that of smokeleaf joints, but it also opens the mind to a broader and more open view of the universe, relieving the pressure on their brains and helping focus</description>
+        <possessionCount>5</possessionCount>
+        <descriptionHyperlinks>
+            <HediffDef>MystPuffHigh</HediffDef>
+            <HediffDef>MystumTolerance</HediffDef>
+            <HediffDef>MystumAddiction</HediffDef>
+            <HediffDef>Asthma</HediffDef>
+        </descriptionHyperlinks>
+        <graphicData>
+            <texPath>Things/Item/Drug/MystPuff</texPath>
+            <graphicClass>Graphic_StackCount</graphicClass>
+            <drawSize>0.75</drawSize>
+        </graphicData>
+        <rotatable>false</rotatable>
+        <statBases>
+            <WorkToMake>450</WorkToMake>
+            <MarketValue>14</MarketValue>
+            <Mass>0.05</Mass>
+            <DeteriorationRate>6</DeteriorationRate>
+            <Flammability>1.3</Flammability>
+        </statBases>
+        <techLevel>Neolithic</techLevel>
+        <ingestible>
+            <foodType>Plant, Processed</foodType>
+            <joyKind>Chemical</joyKind>
+            <joy>0.60</joy>
+            <baseIngestTicks>510</baseIngestTicks>
+            <nurseable>true</nurseable>
+            <drugCategory>Social</drugCategory>
+            <ingestSound>Ingest_Smoke</ingestSound>
+            <ingestEffect>Smoke_Joint</ingestEffect>
+            <ingestEffectEat>EatVegetarian</ingestEffectEat>
+            <ingestHoldOffsetStanding>
+                <northDefault>
+                    <offset>(0.27,0,0.08)</offset>
+                    <behind>true</behind>
+                </northDefault>
+                <east>
+                    <offset>(0.45,0,0.08)</offset>
+                </east>
+                <south>
+                    <offset>(0.27,0,0.08)</offset>
+                </south>
+                <west>
+                    <offset>(-0.50,0,0.08)</offset>
+                    <flip>true</flip>
+                </west>
+            </ingestHoldOffsetStanding>
+            <ingestHoldUsesTable>false</ingestHoldUsesTable>
+            <ingestCommandString>Smoke {0}</ingestCommandString>
+            <ingestReportString>Smoking {0}.</ingestReportString>
+            <ingestReportStringEat>Consuming {0}.</ingestReportStringEat>
+            <useEatingSpeedStat>false</useEatingSpeedStat>
+            <outcomeDoers>
+                <li Class="IngestionOutcomeDoer_GiveHediff">
+                    <hediffDef>MystPuffHigh</hediffDef>
+                    <severity>0.5</severity>
+                    <toleranceChemical>Mystum</toleranceChemical>
+                </li>
+                <li Class="IngestionOutcomeDoer_OffsetNeed">
+                    <need>Rest</need>
+                    <offset>-0.1</offset>
+                </li>
+                <li Class="IngestionOutcomeDoer_GiveHediff">
+                    <hediffDef>MystumTolerance</hediffDef>
+                    <severity>0.030</severity>
+                    <divideByBodySize>true</divideByBodySize>
+                    <multiplyByGeneToleranceFactors>true</multiplyByGeneToleranceFactors>
+                </li>
+            </outcomeDoers>
+        </ingestible>
+        <tradeTags>
+            <li>PrimMyst</li>
+        </tradeTags>
+        <recipeMaker>
+            <recipeUsers>
+                <li>CraftingSpot</li>
+                <li>DrugLab</li>
+            </recipeUsers>
+            <researchPrerequisite>PrimitiveMystum</researchPrerequisite>
+            <workSpeedStat>DrugCookingSpeed</workSpeedStat>
+            <workSkill>Cooking</workSkill>
+        </recipeMaker>
+        <costList>
+            <SmokeleafLeaves>2</SmokeleafLeaves>
+            <AnimaFiber>4</AnimaFiber>
+        </costList>
+        <comps>
+            <li Class="CompProperties_Drug">
+                <chemical>Mystum</chemical>
+                <addictiveness>0.020</addictiveness>
+                <minToleranceToAddict>0.15</minToleranceToAddict>
+                <existingAddictionSeverityOffset>0.06</existingAddictionSeverityOffset>
+                <needLevelOffset>0.9</needLevelOffset>
+                <listOrder>20</listOrder>
+            </li>
+        </comps>
+        <allowedArchonexusCount>50</allowedArchonexusCount>
+    </ThingDef>
+  
+    <HediffDef>
+        <defName>MystPuffHigh</defName>
+        <label>stoned on myst puff</label>
+        <labelNoun>a myst puff high</labelNoun>
+        <description>Myst puff is active in the bloodstream and brain, and triggers a burst of psychic ability as well as relaxation.</description>
+        <hediffClass>Hediff_High</hediffClass>
+        <defaultLabelColor>(1,0,0.5)</defaultLabelColor>
+        <scenarioCanAdd>true</scenarioCanAdd>
+        <maxSeverity>1.0</maxSeverity>
+        <isBad>false</isBad>
+        <comps>
+            <li Class="HediffCompProperties_SeverityPerDay">
+                <severityPerDay>-1.0</severityPerDay>
+                <showHoursToRecover>true</showHoursToRecover>
+            </li>
+        </comps>
+        <stages>
+            <li>
+                <hungerRateFactorOffset>0.3</hungerRateFactorOffset>
+                <painOffset>-0.1</painOffset>
+                <statOffsets>
+                    <PsychicEntropyRecoveryRate>0.1</PsychicEntropyRecoveryRate>
+                </statOffsets>
+                <capMods>
+                    <li>
+                        <capacity>Consciousness</capacity>
+                        <offset>-0.15</offset>
+                    </li>
+                    <li>
+                        <capacity>Moving</capacity>
+                        <offset>-0.05</offset>
+                    </li>
+                </capMods>
+            </li>
+        </stages>
+    </HediffDef>
+    
+    <ThoughtDef>
+        <defName>MystPuffHigh</defName>
+        <workerClass>ThoughtWorker_Hediff</workerClass>
+        <hediff>MystPuffHigh</hediff>
+        <validWhileDespawned>true</validWhileDespawned>
+        <developmentalStageFilter>Baby, Child, Adult</developmentalStageFilter>
+        <stages>
+            <li>
+                <label>high on myst puff</label>
+                <description>I think the universe knows me and loves me. I like this.</description>
+                <baseMoodEffect>12</baseMoodEffect>
+            </li>
+        </stages>
+    </ThoughtDef>
+  
+  </Defs>

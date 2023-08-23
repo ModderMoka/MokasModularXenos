@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <ThingDef ParentName="MakeableDrugBase">
+        <defName>MystTea</defName>
+        <label>myst tea</label>
+        <description>Brewing anima fibers with psychoid leaves not only provides a similar high to that of psychoid tea, but it also opens the mind to a broader and more open view of the universe, boosting their psychic sensitivity.</description>
+        <descriptionHyperlinks>
+            <HediffDef>MystTeaHigh</HediffDef>
+            <HediffDef>MystumTolerance</HediffDef>
+            <HediffDef>MystumAddiction</HediffDef>
+            <HediffDef>ChemicalDamageModerate</HediffDef>
+        </descriptionHyperlinks>
+        <graphicData>
+            <texPath>Things/Item/Drug/MystTea</texPath>
+            <graphicClass>Graphic_StackCount</graphicClass>
+            <drawSize>0.88</drawSize>
+        </graphicData>
+        <rotatable>false</rotatable>
+        <statBases>
+            <WorkToMake>450</WorkToMake>
+            <MarketValue>14</MarketValue>
+            <Mass>0.05</Mass>
+            <DeteriorationRate>6</DeteriorationRate>
+        </statBases>
+        <techLevel>Neolithic</techLevel>
+        <ingestible>
+            <foodType>Fluid, Processed</foodType>
+            <joyKind>Chemical</joyKind>
+            <joy>0.40</joy>
+            <baseIngestTicks>210</baseIngestTicks>
+            <nurseable>true</nurseable>
+            <drugCategory>Social</drugCategory>
+            <ingestSound>Ingest_Drink</ingestSound>
+            <ingestHoldOffsetStanding>
+                <northDefault>
+                    <offset>(0.18,0,0)</offset>
+                </northDefault>
+            </ingestHoldOffsetStanding>
+            <ingestHoldUsesTable>false</ingestHoldUsesTable>
+            <ingestCommandString>Drink {0}</ingestCommandString>
+            <ingestReportString>Drinking {0}.</ingestReportString>
+            <outcomeDoers>
+                <li Class="IngestionOutcomeDoer_GiveHediff">
+                    <hediffDef>MystTeaHigh</hediffDef>
+                    <severity>0.75</severity>
+                    <toleranceChemical>Mystum</toleranceChemical>
+                </li>
+                <li Class="IngestionOutcomeDoer_OffsetNeed">
+                    <need>Rest</need>
+                    <offset>0.05</offset>
+                    <toleranceChemical>Mystum</toleranceChemical>
+                </li>
+                <li Class="IngestionOutcomeDoer_GiveHediff">
+                    <hediffDef>MystumTolerance</hediffDef>
+                    <severity>0.03</severity>
+                    <divideByBodySize>true</divideByBodySize>
+                    <multiplyByGeneToleranceFactors>true</multiplyByGeneToleranceFactors>
+                </li>
+            </outcomeDoers>
+        </ingestible>
+        <tradeTags>
+            <li>PrimMyst</li>
+        </tradeTags>
+        <recipeMaker>
+            <researchPrerequisite>PrimitiveMystum</researchPrerequisite>
+            <recipeUsers>
+                <li>Campfire</li>
+                <li>ElectricStove</li>
+                <li>FueledStove</li>
+            </recipeUsers>
+            <workSpeedStat>DrugCookingSpeed</workSpeedStat>
+            <workSkill>Cooking</workSkill>
+            <skillRequirements>
+                <Cooking>2</Cooking>
+            </skillRequirements>
+            <requiredGiverWorkType>Cooking</requiredGiverWorkType>
+            <displayPriority>1460</displayPriority>
+        </recipeMaker>
+        <costList>
+            <PsychoidLeaves>2</PsychoidLeaves>
+            <AnimaFiber>4</AnimaFiber>
+        </costList>
+        <comps>
+            <li Class="CompProperties_Drug">
+                <chemical>Mystum</chemical>
+                <addictiveness>0.02</addictiveness>
+                <minToleranceToAddict>0.10</minToleranceToAddict>
+                <existingAddictionSeverityOffset>0.10</existingAddictionSeverityOffset>
+                <needLevelOffset>0.9</needLevelOffset>
+                <listOrder>110</listOrder>
+            </li>
+        </comps>
+    </ThingDef>
+      
+    <HediffDef>
+        <defName>MystTeaHigh</defName>
+        <label>high on myst tea</label>
+        <labelNoun>a myst tea high</labelNoun>
+        <description>Myst tea digestion has lead to a burst of psychic ability as well as energy in the brain and body.</description>
+        <hediffClass>Hediff_High</hediffClass>
+        <defaultLabelColor>(1,0,0.5)</defaultLabelColor>
+        <scenarioCanAdd>true</scenarioCanAdd>
+        <maxSeverity>1.0</maxSeverity>
+        <isBad>false</isBad>
+        <comps>
+            <li Class="HediffCompProperties_SeverityPerDay">
+                <severityPerDay>-3.0</severityPerDay>
+                <showHoursToRecover>true</showHoursToRecover>
+            </li>
+        </comps>
+        <stages>
+            <li>
+                <painFactor>0.5</painFactor>
+                <statOffsets>
+                    <PsychicSensitivityOffset>0.05</PsychicSensitivityOffset>
+                </statOffsets>
+                <statFactors>
+                    <RestFallRateFactor>0.4</RestFallRateFactor>
+                </statFactors>
+            </li>
+        </stages>
+    </HediffDef>
+      
+    <ThoughtDef>
+        <defName>MystTeaHigh</defName>
+        <workerClass>ThoughtWorker_Hediff</workerClass>
+        <hediff>MystTeaHigh</hediff>
+        <validWhileDespawned>true</validWhileDespawned>
+        <developmentalStageFilter>Baby, Child, Adult</developmentalStageFilter>
+        <stages>
+            <li>
+                <label>digesting myst tea</label>
+                <description>Oh so this is what the universe is for, this is what we truly mean.</description>
+                <baseMoodEffect>12</baseMoodEffect>
+            </li>
+        </stages>
+    </ThoughtDef>
+    
+</Defs>

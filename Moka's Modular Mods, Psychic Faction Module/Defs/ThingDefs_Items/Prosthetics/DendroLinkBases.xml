@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <ThingCategoryDef>
+      <defName>BodyPartsAstralink</defName>
+      <label>astralinks</label>
+      <parent>BodyParts</parent>
+    </ThingCategoryDef>
+
+    <ThingCategoryDef>
+      <defName>BodyPartsGaurlink</defName>
+      <label>gaurlinks</label>
+      <parent>BodyParts</parent>
+    </ThingCategoryDef>
+
+    <ThingCategoryDef>
+      <defName>BodyPartsAstronic</defName>
+      <label>astronics</label>
+      <parent>BodyParts</parent>
+    </ThingCategoryDef>
+
+    <ThingDef Name="AstralinkPart" ParentName="BodyPartBase" Abstract="True">
+        <techLevel>Industrial</techLevel>
+        <thingCategories>
+            <li>BodyPartsAstralink</li>
+        </thingCategories>
+        <graphicData>
+            <texPath>Things/Item/BodyPart/Astralink</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+            <drawSize>0.80</drawSize>
+        </graphicData>
+        <statBases>
+            <DeteriorationRate>0</DeteriorationRate>
+            <WorkToMake>1200</WorkToMake>
+        </statBases>
+        <tradeTags>
+            <li>BodyPart</li>
+            <li>Astralinks</li>
+        </tradeTags>
+        <techHediffsTags>
+            <li>Astralinks</li>
+        </techHediffsTags>
+        <recipeMaker>
+            <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+            <workSkill>Crafting</workSkill>
+            <effectWorking>Smith</effectWorking>
+            <soundWorking>Recipe_Smith</soundWorking>
+            <unfinishedThingDef>UnfinishedAstralink</unfinishedThingDef>
+            <skillRequirements>
+                <Crafting>7</Crafting>
+            </skillRequirements>
+            <researchPrerequisite>DendroLinkBodies</researchPrerequisite>
+            <recipeUsers>
+                <li>HandTailoringBench</li>
+                <li>CraftingSpot</li>
+            </recipeUsers>
+        </recipeMaker>
+    </ThingDef>
+
+    <ThingDef ParentName="UnfinishedBase">
+        <defName>UnfinishedAstralink</defName>
+        <label>unfinished astralink bodypart</label>
+        <description>An unfinished dendrolink bodypart, missing a bit of extra work.</description>
+        <statBases>
+            <Flammability>0.5</Flammability>
+        </statBases>
+        <graphicData>
+            <texPath>Things/Item/BodyPart/UnfinishedAstralink</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+            <color>(255,255,255)</color>
+        </graphicData>
+        <stuffCategories Inherit="false" />
+    </ThingDef>
+
+    <ThingDef Name="GaurlinkPart" ParentName="BodyPartBase" Abstract="True">
+        <techLevel>Industrial</techLevel>
+        <thingCategories>
+            <li>BodyPartsGaurlink</li>
+        </thingCategories>
+        <graphicData>
+            <texPath>Things/Item/BodyPart/Gaurlink</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+            <drawSize>0.80</drawSize>
+        </graphicData>
+        <statBases>
+            <DeteriorationRate>0</DeteriorationRate>
+            <WorkToMake>1200</WorkToMake>
+        </statBases>
+        <tradeTags>
+            <li>BodyPart</li>
+            <li>Gaurlinks</li>
+        </tradeTags>
+        <techHediffsTags>
+            <li>Gaurlinks</li>
+        </techHediffsTags>
+        <recipeMaker>
+            <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+            <workSkill>Crafting</workSkill>
+            <effectWorking>Smith</effectWorking>
+            <soundWorking>Recipe_Smith</soundWorking>
+            <unfinishedThingDef>UnfinishedGaurlink</unfinishedThingDef>
+            <skillRequirements>
+                <Crafting>7</Crafting>
+            </skillRequirements>
+            <researchPrerequisite>DendroLinkBodies</researchPrerequisite>
+            <recipeUsers>
+                <li>HandTailoringBench</li>
+                <li>CraftingSpot</li>
+            </recipeUsers>
+        </recipeMaker>
+    </ThingDef>
+
+    <ThingDef ParentName="UnfinishedBase">
+        <defName>UnfinishedGaurlink</defName>
+        <label>unfinished gaurlink bodypart</label>
+        <description>An unfinished dendrolink bodypart, missing a bit of extra work.</description>
+        <statBases>
+            <Flammability>0.5</Flammability>
+        </statBases>
+        <graphicData>
+            <texPath>Things/Item/BodyPart/UnfinishedGaurlink</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+            <color>(255,255,255)</color>
+        </graphicData>
+        <stuffCategories Inherit="false" />
+    </ThingDef>
+
+    <ThingDef Name="AstronicPart" ParentName="BodyPartBase" Abstract="True">
+        <techLevel>Spacer</techLevel>
+        <thingCategories>
+            <li>BodyPartsAstronic</li>
+        </thingCategories>
+        <graphicData>
+            <texPath>Things/Item/BodyPart/Astronic</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+            <drawSize>0.80</drawSize>
+        </graphicData>
+        <statBases>
+            <DeteriorationRate>0</DeteriorationRate>
+            <WorkToMake>1200</WorkToMake>
+        </statBases>
+        <tradeTags>
+            <li>BodyPart</li>
+            <li>Astronics</li>
+        </tradeTags>
+        <techHediffsTags>
+            <li>Astronics</li>
+        </techHediffsTags>
+        <recipeMaker>
+            <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+            <workSkill>Crafting</workSkill>
+            <effectWorking>Smith</effectWorking>
+            <soundWorking>Recipe_Smith</soundWorking>
+            <unfinishedThingDef>UnfinishedAstronic</unfinishedThingDef>
+            <skillRequirements>
+                <Crafting>10</Crafting>
+            </skillRequirements>
+            <researchPrerequisite>DendroLinkBionics</researchPrerequisite>
+            <recipeUsers>
+                <li>HandTailoringBench</li>
+                <li>CraftingSpot</li>
+            </recipeUsers>
+        </recipeMaker>
+    </ThingDef>
+
+    <ThingDef ParentName="UnfinishedBase">
+        <defName>UnfinishedAstronic</defName>
+        <label>unfinished astronic bodypart</label>
+        <description>An unfinished dendrolink bodypart, missing a bit of extra work.</description>
+        <statBases>
+            <Flammability>0.5</Flammability>
+        </statBases>
+        <graphicData>
+            <texPath>Things/Item/BodyPart/UnfinishedAstronic</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+            <color>(255,255,255)</color>
+        </graphicData>
+        <stuffCategories Inherit="false" />
+    </ThingDef>
+
+</Defs>

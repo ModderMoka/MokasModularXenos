@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+<!-- Tribal -->
+
+  <FactionDef ParentName="LoxTribeBase">
+    <defName>TribePsychicLox</defName>
+    <label>psy lox tribe</label>
+    <naturalEnemy>true</naturalEnemy>
+    <description>These people have been here a very long time. Maybe their ancestors crashed here a thousand years ago. Maybe they survived some cataclysm that destroyed a technological civilization here. In any case, the tribals are mostly nomadic people who live off the land using primitive tools and weapons.\n\nDespite their apparent technological weakness, the tribals can be dangerous enemies and valuable friends because of their skill with low-tech warfare, their numbers, and their hardiness.\n\nThis particular tribe values warlike dominance; it may be difficult to turn them into an ally, and their Psy abilities make them a more difficult challenge.</description>
+    <factionIconPath>World/WorldObjects/PsyLoxVillage</factionIconPath>
+    <colorSpectrum>
+      <li>(0.3, 0.69, 0.31)</li>
+      <li>(0.65, 0.84, 0.65)</li>
+    </colorSpectrum>
+    <xenotypeSet>
+      <xenotypeChances>
+        <VRE_Animakin MayRequire="vanillaracesexpanded.phytokin">0.005</VRE_Animakin>
+      </xenotypeChances>
+    </xenotypeSet>
+		<requiredMemes>
+			<li MayRequire="Ludeon.RimWorld.Ideology">TreeConnection</li>
+		</requiredMemes>
+    <disallowedMemes>
+      <li MayRequire="Ludeon.RimWorld.Ideology">PainIsVirtue</li>
+      <li MayRequire="Ludeon.RimWorld.Ideology">Nudism</li>
+    </disallowedMemes>
+    <maxConfigurableAtWorldCreation>9999</maxConfigurableAtWorldCreation>
+    <configurationListOrderPriority>40</configurationListOrderPriority>
+    <caravanTraderKinds Inherit="False">
+      <li>Caravan_Neolithic_BulkGoods</li>
+      <li>Caravan_Neolithic_WarMerchant</li>
+      <li>Caravan_Psy_ShamanMerchant</li>
+    </caravanTraderKinds>
+    <visitorTraderKinds Inherit="False">
+      <li>Visitor_PsyNeolithic_Standard</li>
+    </visitorTraderKinds>
+    <baseTraderKinds Inherit="False">
+      <li>PsyLox_Neolithic_Standard</li>
+    </baseTraderKinds>
+    <raidLootMaker Inherit="False">PsyloxRaidLootMaker</raidLootMaker>
+  </FactionDef>
+
+  <ThingSetMakerDef>
+    <defName>PsyloxRaidLootMaker</defName>
+    <root Class="ThingSetMaker_MarketValue">
+      <fixedParams>
+        <filter>
+          <thingDefs>
+            <li>Silver</li>
+            <li>Jade</li>
+            <li>MedicineHerbal</li>
+            <li>Pemmican</li>
+            <li>MystPuff</li>
+            <li>MystTea</li>
+          </thingDefs>
+        </filter>
+      </fixedParams>
+    </root>
+  </ThingSetMakerDef>
+
+<!-- Tribal -->
+
+</Defs>

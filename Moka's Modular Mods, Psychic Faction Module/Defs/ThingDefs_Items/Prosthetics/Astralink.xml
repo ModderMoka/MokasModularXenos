@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <!-- Astralink Leg -->
+	<ThingDef ParentName="AstralinkPart">
+		<defName>AstralinkLeg</defName>
+		<label>astralink leg</label>
+		<description>Being interwoven with anima fibers, this leg extends the surface area of the user's psychic aura, boosting psychic sensitivity as well as neural heat loss.</description>  
+		<descriptionHyperlinks>
+			<HediffDef>AstralinkLeg</HediffDef>
+		</descriptionHyperlinks>
+		<costList>
+			<AnimaFiber>50</AnimaFiber>
+			<WoodLog>50</WoodLog>
+			<MedicineHerbal>20</MedicineHerbal>
+		</costList>
+		<statBases>
+		  	<Mass>1.5</Mass>
+		  	<MarketValue>500</MarketValue>
+		   	<WorkToMake>2000</WorkToMake>
+		</statBases>
+	</ThingDef>
+
+	<RecipeDef ParentName="SurgeryInstallBodyPartArtificialBase">
+		<defName>InstallAstralinkLeg</defName>
+		<label>install astralink leg</label>
+		<description>Install an astralink leg.</description>
+		<descriptionHyperlinks>
+			<ThingDef>AstralinkLeg</ThingDef>
+			<HediffDef>AstralinkLeg</HediffDef>
+		</descriptionHyperlinks>
+		<jobString>Installing an astralink leg.</jobString>
+		<skillRequirements>
+		  <Medicine>10</Medicine>
+		</skillRequirements>
+		<ingredients>
+		  <li>
+			<filter>
+			  <thingDefs>
+				<li>AstralinkLeg</li>
+			  </thingDefs>
+			</filter>
+			<count>1</count>
+		  </li>
+		</ingredients>
+		<fixedIngredientFilter>
+            <thingDefs>
+                <li>AstralinkLeg</li>
+            </thingDefs>
+		</fixedIngredientFilter>
+		<appliedOnFixedBodyParts>
+		    <li>Leg</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>AstralinkLeg</addsHediff>
+	</RecipeDef>
+    
+	<HediffDef ParentName="AddedBodyPartBase">
+		<defName>AstralinkLeg</defName>
+		<label>astralink leg</label>
+		<description>An installed astralink leg.</description>  
+		<descriptionHyperlinks>
+			<ThingDef>AstralinkLeg</ThingDef>
+		</descriptionHyperlinks>
+		<labelNoun>an astralink leg</labelNoun>
+		<defaultLabelColor>(0, 0.6, 0.4)</defaultLabelColor>
+		<addedPartProps>
+			<solid>true</solid>
+			<partEfficiency>0.8</partEfficiency>  
+			<betterThanNatural>false</betterThanNatural>
+		</addedPartProps>
+		<stages>  
+			<li>
+				<statOffsets>
+					<PsychicSensitivity>0.075</PsychicSensitivity>
+					<RBSF_NatureConnection MayRequire="Rooboid.Faun">0.5</RBSF_NatureConnection>
+                    <PsychicEntropyRecoveryRate>0.1</PsychicEntropyRecoveryRate>
+				</statOffsets>
+			</li>
+		</stages>
+		<spawnThingOnRemoved>AstralinkLeg</spawnThingOnRemoved>
+	</HediffDef>
+
+    <!-- Astralink Arm -->
+	<ThingDef ParentName="AstralinkPart">
+		<defName>AstralinkArm</defName>
+		<label>astralink arm</label>
+		<description>Being interwoven with anima fibers, this arm extends the surface area of the user's psychic aura, boosting psychic sensitivity as well as neural heat loss.</description>
+		<descriptionHyperlinks>
+			<HediffDef>AstralinkArm</HediffDef>
+		</descriptionHyperlinks>
+		<costList>
+			<AnimaFiber>50</AnimaFiber>
+			<WoodLog>50</WoodLog>
+			<MedicineHerbal>20</MedicineHerbal>
+		</costList>
+		<statBases>
+			<Mass>1.5</Mass>
+			<MarketValue>500</MarketValue>
+			<WorkToMake>2000</WorkToMake>
+		</statBases>
+	</ThingDef>
+   
+	<RecipeDef ParentName="SurgeryInstallBodyPartArtificialBase">
+		<defName>InstallAstralinkArm</defName>
+		<label>install astralink arm</label>
+		<description>Installs astralink arm.</description>
+		<descriptionHyperlinks>
+			<ThingDef>AstralinkArm</ThingDef>
+			<HediffDef>AstralinkArm</HediffDef>
+		</descriptionHyperlinks>
+		<jobString>Installing astralink arm.</jobString>
+		<ingredients>
+		 <li>
+			<filter>
+			   <thingDefs>
+				  <li>AstralinkArm</li>
+			   </thingDefs>
+			</filter>
+			<count>1</count>
+		 </li>
+		</ingredients>
+		<fixedIngredientFilter>
+		 <thingDefs>
+			<li>AstralinkArm</li>
+		 </thingDefs>
+		</fixedIngredientFilter>
+		<appliedOnFixedBodyParts>
+		 	<li>Shoulder</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>AstralinkArm</addsHediff>  
+	</RecipeDef>
+
+	<HediffDef ParentName="AddedBodyPartBase"> 
+		<defName>AstralinkArm</defName>  
+		<label>astralink arm</label>
+		<labelNoun>astralink arm</labelNoun>
+		<description>An installed astralink arm.</description>
+		<descriptionHyperlinks>
+			<ThingDef>AstralinkArm</ThingDef>
+		</descriptionHyperlinks>
+		<comps>
+		  <li Class="HediffCompProperties_VerbGiver">
+			<tools>
+			  <li>
+				<label>fist</label>
+				<capacities>
+				  	<li>Blunt</li>
+				</capacities>
+				<power>7</power>
+				<cooldownTime>2</cooldownTime>
+				<soundMeleeHit>MeleeHit_BionicPunch</soundMeleeHit>
+				<soundMeleeMiss>MeleeMiss_BionicPunch</soundMeleeMiss>
+			  </li>
+			</tools>
+		  </li>
+		</comps>
+		<spawnThingOnRemoved>AstralinkArm</spawnThingOnRemoved>
+		<defaultLabelColor>(0, 0.6, 0.4)</defaultLabelColor>
+		<stages>
+			<li>
+				<statOffsets>
+					<PsychicSensitivity>0.075</PsychicSensitivity>
+					<RBSF_NatureConnection MayRequire="Rooboid.Faun">0.5</RBSF_NatureConnection>
+                    <PsychicEntropyRecoveryRate>0.1</PsychicEntropyRecoveryRate>
+				</statOffsets>
+			</li>
+		</stages>
+		<addedPartProps>
+			<solid>true</solid>
+			<partEfficiency>0.8</partEfficiency>  
+			<betterThanNatural>false</betterThanNatural>
+		</addedPartProps>
+	</HediffDef>
+
+    <!-- Astralink Eye -->
+	<ThingDef ParentName="AstralinkPart">
+		<defName>AstralinkEye</defName>
+		<label>astralink eye</label>
+		<description>While not big enough to significantly boost psychic sensitivity, these eyes are capable of improving psyfocus to a surprising degree.</description>
+		<descriptionHyperlinks>
+			<HediffDef>AstralinkEye</HediffDef>
+		</descriptionHyperlinks>
+		<costList>
+			<AnimaFiber>15</AnimaFiber>
+			<WoodLog>15</WoodLog>
+			<MedicineHerbal>5</MedicineHerbal>
+		</costList>
+		<statBases>
+		  	<Mass>0.5</Mass>
+		  	<MarketValue>500</MarketValue>
+		   	<WorkToMake>2000</WorkToMake>
+		</statBases>
+	</ThingDef>
+
+	<RecipeDef ParentName="SurgeryInstallBodyPartArtificialBase">
+		<defName>InstallAstralinkEye</defName>
+		<label>install an astralink eye</label>
+		<description>Install astralink eye.</description>
+		<descriptionHyperlinks>
+			<ThingDef>AstralinkEye</ThingDef>
+			<HediffDef>AstralinkEye</HediffDef>
+		</descriptionHyperlinks>
+		<jobString>Installing astralink eye.</jobString>
+		<ingredients>
+		  	<li>
+				<filter>
+					<thingDefs>
+						<li>AstralinkEye</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+		  	</li>
+		</ingredients>
+		<fixedIngredientFilter>
+		  	<thingDefs>
+				<li>AstralinkEye</li>
+		  	</thingDefs>
+		</fixedIngredientFilter>
+		<appliedOnFixedBodyParts>
+		  	<li>Eye</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>AstralinkEye</addsHediff>
+		<skillRequirements>
+		  	<Medicine>10</Medicine>
+		</skillRequirements>
+	</RecipeDef>
+
+	<HediffDef ParentName="AddedBodyPartBase"> 
+		<defName>AstralinkEye</defName>
+		<label>astralink eye</label>
+		<description>An installed astralink eye.</description>
+		<descriptionHyperlinks>
+			<ThingDef>AstralinkEye</ThingDef>
+		</descriptionHyperlinks>
+		<labelNoun>an astralink eye</labelNoun>
+		<defaultLabelColor>(0, 0.6, 0.4)</defaultLabelColor>
+		<stages>
+			<li>
+				<statOffsets>
+					<PawnBeauty>0.5</PawnBeauty>
+					<MeditationFocusGain>0.15</MeditationFocusGain>
+					<RBSF_NatureConnection MayRequire="Rooboid.Faun">0.5</RBSF_NatureConnection>
+				</statOffsets>
+			</li>
+		</stages>
+		<addedPartProps>
+		  <solid>true</solid>
+		  <partEfficiency>0.8</partEfficiency>   
+		  <betterThanNatural>false</betterThanNatural>
+		</addedPartProps>
+		<spawnThingOnRemoved>AstralinkEye</spawnThingOnRemoved>
+	</HediffDef>
+
+</Defs>

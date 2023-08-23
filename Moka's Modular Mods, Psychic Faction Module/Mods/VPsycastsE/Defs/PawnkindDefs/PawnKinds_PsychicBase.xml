@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  
+  <PawnKindDef ParentName="TribalChiefBase" Name="TribeloxCheifPsyc" Abstract="True">
+    <label>tribal loxchief caster</label>
+    <combatPower>95</combatPower>
+    <apparelRequired Inherit="False">
+      <li>VPE_Apparel_EltexMask</li>
+    </apparelRequired>
+    <xenotypeSet>
+      <xenotypeChances>
+        <Moka_Astralox>0.75</Moka_Astralox>
+      </xenotypeChances>
+    </xenotypeSet>
+    <requiredWorkTags>
+       <li>Violent</li>
+    </requiredWorkTags>
+    <weaponMoney>2000</weaponMoney>
+    <techHediffsTags>
+      <li>Astralinks</li>
+    </techHediffsTags>
+    <techHediffsChance>0.9</techHediffsChance>
+    <techHediffsMoney>1000~1200</techHediffsMoney>
+    <initialResistanceRange>16~26</initialResistanceRange>
+    <modExtensions>
+       <li Class="VanillaPsycastsExpanded.PawnKindAbilityExtension_Psycasts">
+          <implantDef>VPE_PsycastAbilityImplant</implantDef>
+          <initialLevel>1</initialLevel>
+          <statUpgradePoints>2~6</statUpgradePoints>
+          <unlockedPaths>
+             <VPE_Warlord>1~4|2~8</VPE_Warlord>
+          </unlockedPaths>
+       </li>
+    </modExtensions>
+  </PawnKindDef>
+
+  <PawnKindDef ParentName="TribalBase" Name="TribeloxPsycaster" Abstract="True">
+      <label>tribal lox caster</label>
+      <defaultFactionType Inherit="False">TribeCivilLox</defaultFactionType>
+      <combatPower>70</combatPower>
+      <itemQuality>Normal</itemQuality>
+      <canBeSapper>false</canBeSapper>
+      <apparelMoney>500~800</apparelMoney>
+      <apparelTags Inherit="False">
+        <li>Psychic</li>
+      </apparelTags>
+      <requiredWorkTags>
+        <li>Violent</li>
+      </requiredWorkTags>
+      <weaponMoney>1500~1800</weaponMoney>
+      <weaponTags Inherit="False">
+         <li>AnimaStaff</li>
+         <li>NeolithicRangedDecent</li>
+      </weaponTags>
+      <xenotypeSet>
+        <xenotypeChances>
+          <Moka_Astralox>0.5</Moka_Astralox>
+        </xenotypeChances>
+      </xenotypeSet>
+      <initialWillRange>5~7</initialWillRange>
+      <initialResistanceRange>16~24</initialResistanceRange>
+      <techHediffsTags>
+        <li>Astralinks</li>
+      </techHediffsTags>
+      <techHediffsChance>1</techHediffsChance>
+      <techHediffsMoney>500~1000</techHediffsMoney>
+  </PawnKindDef>
+
+  <PawnKindDef ParentName="GuardBase" Name="LoxPsycasterBase" Abstract="True">
+    <label>town caster</label>
+    <defaultFactionType Inherit="False">LoxlanderCivil</defaultFactionType>
+    <combatPower>90</combatPower>
+    <xenotypeSet>
+      <xenotypeChances>
+        <Moka_Astralox>0.8</Moka_Astralox>
+      </xenotypeChances>
+    </xenotypeSet>
+    <apparelTags>
+      <li>Psychic</li>
+    </apparelTags>
+    <requiredWorkTags>
+      <li>Violent</li>
+    </requiredWorkTags>
+    <apparelMoney>900~1200</apparelMoney>
+    <techHediffsTags>
+      <li>Gaurlinks</li>
+    </techHediffsTags>
+    <initialWillRange>7~10</initialWillRange>
+    <initialResistanceRange>24~30</initialResistanceRange>
+  </PawnKindDef>
+  
+</Defs>

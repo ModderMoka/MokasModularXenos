@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <!-- Gaurlink Leg -->
+    <ThingDef ParentName="GaurlinkPart">
+		<defName>GaurlinkLeg</defName>
+		<label>gaurlink leg</label>
+		<description>Copying the industrious nature of the Dryad allowed this leg to truly take form. It improves the movement speed of the user while slightly boosting carry weight.</description>  
+		<descriptionHyperlinks>
+			<HediffDef>GaurlinkLeg</HediffDef>
+		</descriptionHyperlinks>
+		<costList>
+			<GauranlenSeed>1</GauranlenSeed>
+			<WoodLog>50</WoodLog>
+			<MedicineHerbal>15</MedicineHerbal>
+		</costList>
+		<statBases>
+		  	<Mass>1.5</Mass>
+		  	<MarketValue>500</MarketValue>
+		   	<WorkToMake>2000</WorkToMake>
+		</statBases>
+	</ThingDef>
+
+	<RecipeDef ParentName="SurgeryInstallBodyPartArtificialBase">
+		<defName>InstallGaurlinkLeg</defName>
+		<label>install gaurlink leg</label>
+		<description>Install an gaurlink leg.</description>
+		<descriptionHyperlinks>
+			<ThingDef>GaurlinkLeg</ThingDef>
+			<HediffDef>GaurlinkLeg</HediffDef>
+		</descriptionHyperlinks>
+		<jobString>Installing a gaurlink leg.</jobString>
+		<skillRequirements>
+		  <Medicine>10</Medicine>
+		</skillRequirements>
+		<ingredients>
+		  <li>
+			<filter>
+			  <thingDefs>
+				<li>GaurlinkLeg</li>
+			  </thingDefs>
+			</filter>
+			<count>1</count>
+		  </li>
+		</ingredients>
+		<fixedIngredientFilter>
+            <thingDefs>
+                <li>GaurlinkLeg</li>
+            </thingDefs>
+		</fixedIngredientFilter>
+		<appliedOnFixedBodyParts>
+		    <li>Leg</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>GaurlinkLeg</addsHediff>
+	</RecipeDef>
+    
+	<HediffDef ParentName="AddedBodyPartBase"> 
+		<defName>GaurlinkLeg</defName>
+		<label>gaurlink leg</label>
+		<description>An installed gaurlink leg.</description>  
+		<descriptionHyperlinks>
+			<ThingDef>GaurlinkLeg</ThingDef>
+		</descriptionHyperlinks>
+		<labelNoun>a gaurlink leg</labelNoun>
+		<defaultLabelColor>(0, 0.6, 0.4)</defaultLabelColor>
+		<addedPartProps>
+			<solid>true</solid>
+			<partEfficiency>0.8</partEfficiency>  
+			<betterThanNatural>false</betterThanNatural>
+		</addedPartProps>
+		<stages>  
+			<li>
+				<statOffsets>
+					<CarryingCapacity>15</CarryingCapacity>
+					<MoveSpeed>0.05</MoveSpeed>
+					<RBSF_NatureConnection MayRequire="Rooboid.Faun">0.5</RBSF_NatureConnection>
+				</statOffsets>
+			</li>
+		</stages>
+		<spawnThingOnRemoved>GaurlinkLeg</spawnThingOnRemoved>
+	</HediffDef>
+
+    <!-- Gaurlink Arm -->
+	<ThingDef ParentName="GaurlinkPart">
+		<defName>GaurlinkArm</defName>
+		<label>gaurlink arm</label>
+		<description>Copying the industrious nature of the Dryad allowed this arm to truly take form. It improves the carrying capacity of the user while being capable of blunt damage.</description>
+		<descriptionHyperlinks>
+			<HediffDef>GaurlinkArm</HediffDef>
+		</descriptionHyperlinks>
+		<costList>
+			<GauranlenSeed>1</GauranlenSeed>
+			<WoodLog>50</WoodLog>
+			<MedicineHerbal>15</MedicineHerbal>
+		</costList>
+		<statBases>
+			<Mass>1.5</Mass>
+			<MarketValue>500</MarketValue>
+			<WorkToMake>2000</WorkToMake>
+		</statBases>
+	</ThingDef>
+   
+	<RecipeDef ParentName="SurgeryInstallBodyPartArtificialBase">
+		<defName>InstallGaurlinkArm</defName>
+		<label>install gaurlink arm</label>
+		<description>Installs gaurlink arm.</description>
+		<descriptionHyperlinks>
+			<ThingDef>GaurlinkArm</ThingDef>
+			<HediffDef>GaurlinkArm</HediffDef>
+		</descriptionHyperlinks>
+		<jobString>Installing gaurlink arm.</jobString>
+		<ingredients>
+		 <li>
+			<filter>
+			   <thingDefs>
+				  <li>GaurlinkArm</li>
+			   </thingDefs>
+			</filter>
+			<count>1</count>
+		 </li>
+		</ingredients>
+		<fixedIngredientFilter>
+		 <thingDefs>
+			<li>GaurlinkArm</li>
+		 </thingDefs>
+		</fixedIngredientFilter>
+		<appliedOnFixedBodyParts>
+		 	<li>Shoulder</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>GaurlinkArm</addsHediff>  
+	</RecipeDef>
+
+	<HediffDef ParentName="AddedBodyPartBase"> 
+		<defName>GaurlinkArm</defName>  
+		<label>gaurlink arm</label>
+		<labelNoun>gaurlink arm</labelNoun>
+		<description>An installed gaurlink arm.</description>
+		<descriptionHyperlinks>
+			<ThingDef>GaurlinkArm</ThingDef>
+		</descriptionHyperlinks>
+		<comps>
+		  <li Class="HediffCompProperties_VerbGiver">
+			<tools>
+			  <li>
+				<label>fist</label>
+				<capacities>
+				  	<li>Blunt</li>
+				</capacities>
+				<power>9</power>
+				<cooldownTime>2</cooldownTime>
+				<soundMeleeHit>MeleeHit_BionicPunch</soundMeleeHit>
+				<soundMeleeMiss>MeleeMiss_BionicPunch</soundMeleeMiss>
+			  </li>
+			</tools>
+		  </li>
+		</comps>
+		<spawnThingOnRemoved>GaurlinkArm</spawnThingOnRemoved>
+		<defaultLabelColor>(0, 0.6, 0.4)</defaultLabelColor>
+		<stages>
+			<li>
+				<statOffsets>
+					<PlantHarvestYield>0.1</PlantHarvestYield>
+					<PruningSpeed MayRequire="ludeon.rimworld.ideology">0.1</PruningSpeed>
+					<CarryingCapacity>15</CarryingCapacity>
+					<RBSF_NatureConnection MayRequire="Rooboid.Faun">0.5</RBSF_NatureConnection>
+				</statOffsets>
+			</li>
+		</stages>
+		<addedPartProps>
+			<solid>true</solid>
+			<partEfficiency>0.8</partEfficiency>  
+			<betterThanNatural>false</betterThanNatural>
+		</addedPartProps>
+	</HediffDef>
+    
+    <!-- Gaurlink Eye -->
+	<ThingDef ParentName="GaurlinkPart">
+		<defName>GaurlinkEye</defName>
+		<label>gaurlink eye</label>
+		<description>Using the examples of Gauranlen dryads, these eyes help the user with seeing long distances and improve their accuracy when aiming.</description>
+		<descriptionHyperlinks>
+			<HediffDef>GaurlinkEye</HediffDef>
+		</descriptionHyperlinks>
+		<costList>
+			<Gold>3</Gold>
+			<WoodLog>15</WoodLog>
+			<MedicineHerbal>5</MedicineHerbal>
+		</costList>
+		<statBases>
+		  	<Mass>0.5</Mass>
+		  	<MarketValue>500</MarketValue>
+		   	<WorkToMake>2000</WorkToMake>
+		</statBases>
+	</ThingDef>
+
+	<RecipeDef ParentName="SurgeryInstallBodyPartArtificialBase">
+		<defName>InstallGaurlinkEye</defName>
+		<label>install an gaurlink eye</label>
+		<description>Install gaurlink eye.</description>
+		<descriptionHyperlinks>
+			<ThingDef>GaurlinkEye</ThingDef>
+			<HediffDef>GaurlinkEye</HediffDef>
+		</descriptionHyperlinks>
+		<jobString>Installing gaurlink eye.</jobString>
+		<ingredients>
+		  	<li>
+				<filter>
+					<thingDefs>
+						<li>GaurlinkEye</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+		  	</li>
+		</ingredients>
+		<fixedIngredientFilter>
+		  	<thingDefs>
+				<li>GaurlinkEye</li>
+		  	</thingDefs>
+		</fixedIngredientFilter>
+		<appliedOnFixedBodyParts>
+		  	<li>Eye</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>GaurlinkEye</addsHediff>
+		<skillRequirements>
+		  	<Medicine>10</Medicine>
+		</skillRequirements>
+	</RecipeDef>
+
+	<HediffDef ParentName="AddedBodyPartBase"> 
+		<defName>GaurlinkEye</defName>
+		<label>gaurlink eye</label>
+		<description>An installed gaurlink eye.</description>
+		<descriptionHyperlinks>
+			<ThingDef>GaurlinkEye</ThingDef>
+		</descriptionHyperlinks>
+		<labelNoun>an gaurlink eye</labelNoun>
+		<defaultLabelColor>(0, 0.6, 0.4)</defaultLabelColor>
+		<stages>
+			<li>
+				<statOffsets>
+					<PawnBeauty>0.5</PawnBeauty>
+					<RBSF_NatureConnection MayRequire="Rooboid.Faun">0.5</RBSF_NatureConnection>
+				</statOffsets>
+				<statFactors>
+					<ShootingAccuracyFactor_Long>1.002</ShootingAccuracyFactor_Long>
+					<ShootingAccuracyFactor_Medium>1.001</ShootingAccuracyFactor_Medium>
+					<ShootingAccuracyFactor_Short>0.986</ShootingAccuracyFactor_Short>
+					<ShootingAccuracyFactor_Touch>0.974</ShootingAccuracyFactor_Touch>
+					<MortarMissRadiusFactor>1.2</MortarMissRadiusFactor>
+				</statFactors>
+			</li>
+		</stages>
+		<addedPartProps>
+		  <solid>true</solid>
+		  <partEfficiency>0.8</partEfficiency>   
+		  <betterThanNatural>false</betterThanNatural>
+		</addedPartProps>
+		<spawnThingOnRemoved>GaurlinkEye</spawnThingOnRemoved>
+	</HediffDef>
+
+</Defs>

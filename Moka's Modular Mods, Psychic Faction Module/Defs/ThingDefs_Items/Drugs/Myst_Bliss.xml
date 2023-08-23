@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <ThingDef ParentName="MakeableDrugPillBase">
+        <defName>MystBliss</defName>
+        <label>myst bliss</label>
+        <description>A unique blend of both anima fibers and the elusive blisscap, that goes beyond the effects of more primitive Mystum drugs in its benefits. the unique combination boosts the psychic abilities of the user at the loss of some bodily function along with slowing down higher brain function.</description>
+        <descriptionHyperlinks>
+            <HediffDef>MystBlissHigh</HediffDef>
+            <HediffDef>MystumAddiction</HediffDef>
+            <HediffDef>MystumTolerance</HediffDef>
+        </descriptionHyperlinks>
+        <graphicData>
+            <texPath>Things/Item/Drug/MystBliss</texPath>
+            <graphicClass>Graphic_StackCount</graphicClass>
+            <drawSize>1.2</drawSize>
+        </graphicData>
+        <rotatable>false</rotatable>
+        <statBases>
+            <WorkToMake>900</WorkToMake>
+            <MarketValue>35</MarketValue>
+            <Mass>0.005</Mass>
+        </statBases>
+        <techLevel>Industrial</techLevel>
+        <ingestible>
+            <joyKind>Chemical</joyKind>
+            <joy>0.70</joy>
+            <drugCategory>Hard</drugCategory>
+            <outcomeDoers>
+                <li Class="IngestionOutcomeDoer_GiveHediff">
+                    <hediffDef>MystBlissHigh</hediffDef>
+                    <severity>0.75</severity>
+                    <toleranceChemical>Mystum</toleranceChemical>
+                </li>
+                <li Class="IngestionOutcomeDoer_OffsetNeed">
+                    <need>Rest</need>
+                    <offset>1.0</offset>
+                    <toleranceChemical>Mystum</toleranceChemical>
+                </li>
+                <li Class="IngestionOutcomeDoer_GiveHediff">
+                    <hediffDef>MystumTolerance</hediffDef>
+                    <severity>0.070</severity>
+                    <divideByBodySize>true</divideByBodySize>
+                    <multiplyByGeneToleranceFactors>true</multiplyByGeneToleranceFactors>
+                </li>
+            </outcomeDoers>
+        </ingestible>
+        <tradeTags>
+            <li>RefiMyst</li>
+        </tradeTags>
+        <recipeMaker>
+            <researchPrerequisite>RefinedMystum</researchPrerequisite>
+            <recipeUsers>
+                <li>DrugLab</li>
+            </recipeUsers>
+        </recipeMaker>
+        <costList>
+            <Neutroamine>2</Neutroamine>
+            <AnimaFiber>8</AnimaFiber>
+            <VPE_Blisscap MayRequire="VanillaExpanded.VPlantsEMushrooms">4</VPE_Blisscap>
+        </costList>
+        <comps>
+            <li Class="CompProperties_Drug">
+                <chemical>Mystum</chemical>
+                <addictiveness>0.02</addictiveness>
+                <existingAddictionSeverityOffset>0.20</existingAddictionSeverityOffset>
+                <needLevelOffset>0.9</needLevelOffset>
+                <listOrder>210</listOrder>
+                <overdoseSeverityOffset>0.18~0.35</overdoseSeverityOffset>
+                <largeOverdoseChance>0.005</largeOverdoseChance>
+            </li>
+        </comps>
+    </ThingDef>
+  
+    <HediffDef>
+        <defName>MystBlissHigh</defName>
+        <label>high on myst bliss</label>
+        <labelNoun>a myst bliss high</labelNoun>
+        <description>Myst bliss is active in the body and soul and has triggered an increase in awareness of all things by the pawn. It's beautiful.</description>
+        <hediffClass>Hediff_High</hediffClass>
+        <defaultLabelColor>(1,0,0.5)</defaultLabelColor>
+        <scenarioCanAdd>true</scenarioCanAdd>
+        <maxSeverity>1.0</maxSeverity>
+        <isBad>false</isBad>
+        <comps>
+            <li Class="HediffCompProperties_SeverityPerDay">
+                <severityPerDay>-1.5</severityPerDay>
+                <showHoursToRecover>true</showHoursToRecover>
+            </li>
+        </comps>
+        <stages>
+            <li>
+                <capMods>
+                    <li>
+                        <capacity>Consciousness</capacity>
+                        <offset>-0.1</offset>
+                    </li>
+                    <li>
+                        <capacity>Moving</capacity>
+                        <offset>-0.1</offset>
+                    </li>
+                </capMods>
+                <statOffsets>
+                    <WorkSpeedGlobal>-0.5</WorkSpeedGlobal>
+                    <PsychicSensitivity>0.5</PsychicSensitivity>				
+                    <MeditationFocusGain MayRequire="Ludeon.RimWorld.Royalty">0.2</MeditationFocusGain>
+                    <PsychicEntropyRecoveryRate>0.25</PsychicEntropyRecoveryRate>
+                </statOffsets>
+                <statFactors>
+                    <RestFallRateFactor>0.8</RestFallRateFactor>
+                </statFactors>
+            </li>
+        </stages>
+    </HediffDef>
+    
+    <ThoughtDef>
+        <defName>MystBlissHigh</defName>
+        <workerClass>ThoughtWorker_Hediff</workerClass>
+        <hediff>MystBlissHigh</hediff>
+        <validWhileDespawned>true</validWhileDespawned>
+        <developmentalStageFilter>Baby, Child, Adult</developmentalStageFilter>
+        <stages>
+            <li>
+                <label>high on myst bliss</label>
+                <description>I am the universe and she is me, I am one with everything and everything is in me</description>
+                <baseMoodEffect>12</baseMoodEffect>
+            </li>
+        </stages>
+    </ThoughtDef>
+    
+</Defs>

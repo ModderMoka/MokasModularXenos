@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/ThingDef[@Name="BasePsyBlaster"]/weaponTags</xpath>
+		<value>
+			<li>BasePsychicGun</li>
+		</value>
+	</Operation>
+
+	<!-- <Operation Class="PatchOperationConditional">
+		<xpath>Defs/ThingDef[@Name="BasePsyBlaster_Focus" or @Name="BasePsyBlaster_NeuralHeat"]/weaponTags/li/PsychicGun</xpath>
+		<match Class="PatchOperationRemove">
+			<xpath>Defs/ThingDef[@Name="BasePsyBlaster_Focus" or @Name="BasePsyBlaster_NeuralHeat"]/weaponTags/li[text()="PsychicGun"]</xpath>
+		</match>
+	</Operation> -->
+	
+</Patch>

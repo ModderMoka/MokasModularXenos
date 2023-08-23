@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <!-- Astronic Leg -->
+	<ThingDef ParentName="AstronicPart">
+		<defName>AstronicLeg</defName>
+		<label>astronic leg</label>
+		<description>Combining previous Dendrolink limbs as well as what was learned from bionics experiments, this leg is capable of merging both functions of the Astralink and Gaurlink varieties and still manages to be more efficient.</description>  
+		<descriptionHyperlinks>
+			<HediffDef>AstronicLeg</HediffDef>
+		</descriptionHyperlinks>
+		<costList>
+			<VPE_Eltex MayRequire="vanillaexpanded.vpsycastse">2</VPE_Eltex>
+			<ComponentSpacer>2</ComponentSpacer>
+			<Plasteel>10</Plasteel>
+			<WoodLog>15</WoodLog>
+			<AnimaFiber>30</AnimaFiber>
+		</costList>
+		<statBases>
+		  	<Mass>1.5</Mass>
+		  	<MarketValue>500</MarketValue>
+		   	<WorkToMake>2000</WorkToMake>
+		</statBases>
+	</ThingDef>
+
+	<RecipeDef ParentName="SurgeryInstallBodyPartArtificialBase">
+		<defName>InstallAstronicLeg</defName>
+		<label>install astronic leg</label>
+		<description>Install an astronic leg.</description>
+		<descriptionHyperlinks>
+			<ThingDef>AstronicLeg</ThingDef>
+			<HediffDef>AstronicLeg</HediffDef>
+		</descriptionHyperlinks>
+		<jobString>Installing an astronic leg.</jobString>
+		<skillRequirements>
+		  <Medicine>10</Medicine>
+		</skillRequirements>
+		<ingredients>
+		  <li>
+			<filter>
+			  <thingDefs>
+				<li>AstronicLeg</li>
+			  </thingDefs>
+			</filter>
+			<count>1</count>
+		  </li>
+		</ingredients>
+		<fixedIngredientFilter>
+            <thingDefs>
+                <li>AstronicLeg</li>
+            </thingDefs>
+		</fixedIngredientFilter>
+		<appliedOnFixedBodyParts>
+		    <li>Leg</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>AstronicLeg</addsHediff>
+	</RecipeDef>
+    
+	<HediffDef ParentName="AddedBodyPartBase"> 
+		<defName>AstronicLeg</defName>
+		<label>astronic leg</label>
+		<description>An installed astronic leg.</description>  
+		<descriptionHyperlinks>
+			<ThingDef>AstronicLeg</ThingDef>
+		</descriptionHyperlinks>
+		<labelNoun>an astronic leg</labelNoun>
+		<defaultLabelColor>(0, 0.6, 0.4)</defaultLabelColor>
+		<addedPartProps>
+			<solid>true</solid>
+			<partEfficiency>1</partEfficiency>  
+			<betterThanNatural>true</betterThanNatural>
+		</addedPartProps>
+		<stages>  
+			<li>
+				<statOffsets>
+					<CarryingCapacity>25</CarryingCapacity>
+					<MoveSpeed>0.1</MoveSpeed>
+					<RBSF_NatureConnection MayRequire="Rooboid.Faun">-0.75</RBSF_NatureConnection>
+					<PsychicSensitivity>0.1</PsychicSensitivity>
+					<PsychicEntropyRecoveryRate>0.15</PsychicEntropyRecoveryRate>
+				</statOffsets>
+			</li>
+		</stages>
+		<spawnThingOnRemoved>AstronicLeg</spawnThingOnRemoved>
+	</HediffDef>
+    
+    <!-- Astronic Arm -->
+	<ThingDef ParentName="AstronicPart">
+		<defName>AstronicArm</defName>
+		<label>astronic arm</label>
+		<description>Combining previous Dendrolink limbs as well as what was learned from bionics experiments, this arm is capable of merging both functions of the Astralink and Gaurlink varieties and still manages to be more efficient.</description>
+		<descriptionHyperlinks>
+			<HediffDef>AstronicArm</HediffDef>
+		</descriptionHyperlinks>
+		<costList>
+			<VPE_Eltex MayRequire="vanillaexpanded.vpsycastse">2</VPE_Eltex>
+			<ComponentSpacer>2</ComponentSpacer>
+			<Plasteel>10</Plasteel>
+			<WoodLog>15</WoodLog>
+			<AnimaFiber>30</AnimaFiber>
+		</costList>
+		<statBases>
+			<Mass>1.5</Mass>
+			<MarketValue>500</MarketValue>
+			<WorkToMake>2000</WorkToMake>
+		</statBases>
+	</ThingDef>
+   
+	<RecipeDef ParentName="SurgeryInstallBodyPartArtificialBase">
+		<defName>InstallAstronicArm</defName>
+		<label>install astronic arm</label>
+		<description>Installs astronic arm.</description>
+		<descriptionHyperlinks>
+			<ThingDef>AstronicArm</ThingDef>
+			<HediffDef>AstronicArm</HediffDef>
+		</descriptionHyperlinks>
+		<jobString>Installing astronic arm.</jobString>
+		<ingredients>
+		 <li>
+			<filter>
+			   <thingDefs>
+				  <li>AstronicArm</li>
+			   </thingDefs>
+			</filter>
+			<count>1</count>
+		 </li>
+		</ingredients>
+		<fixedIngredientFilter>
+		 <thingDefs>
+			<li>AstronicArm</li>
+		 </thingDefs>
+		</fixedIngredientFilter>
+		<appliedOnFixedBodyParts>
+		 	<li>Shoulder</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>AstronicArm</addsHediff>  
+	</RecipeDef>
+
+	<HediffDef ParentName="AddedBodyPartBase"> 
+		<defName>AstronicArm</defName>  
+		<label>astronic arm</label>
+		<labelNoun>astronic arm</labelNoun>
+		<description>An installed astronic arm.</description>
+		<descriptionHyperlinks>
+			<ThingDef>AstronicArm</ThingDef>
+		</descriptionHyperlinks>
+		<comps>
+		  <li Class="HediffCompProperties_VerbGiver">
+			<tools>
+			  <li>
+				<label>fist</label>
+				<capacities>
+				  	<li>Blunt</li>
+				</capacities>
+				<power>12</power>
+				<cooldownTime>2</cooldownTime>
+				<soundMeleeHit>MeleeHit_BionicPunch</soundMeleeHit>
+				<soundMeleeMiss>MeleeMiss_BionicPunch</soundMeleeMiss>
+			  </li>
+			</tools>
+		  </li>
+		</comps>
+		<spawnThingOnRemoved>AstronicArm</spawnThingOnRemoved>
+		<defaultLabelColor>(0, 0.6, 0.4)</defaultLabelColor>
+		<stages>
+			<li>
+				<statOffsets>
+					<PlantHarvestYield>0.2</PlantHarvestYield>
+					<PruningSpeed MayRequire="ludeon.rimworld.ideology">0.15</PruningSpeed>
+					<CarryingCapacity>25</CarryingCapacity>
+					<RBSF_NatureConnection MayRequire="Rooboid.Faun">-0.75</RBSF_NatureConnection>
+					<PsychicSensitivity>0.1</PsychicSensitivity>
+					<PsychicEntropyRecoveryRate>0.15</PsychicEntropyRecoveryRate>
+				</statOffsets>
+			</li>
+		</stages>
+		<addedPartProps>
+			<solid>true</solid>
+			<partEfficiency>1</partEfficiency>  
+			<betterThanNatural>true</betterThanNatural>
+		</addedPartProps>
+	</HediffDef>
+
+    <!-- Astronic Eye -->
+	<ThingDef ParentName="AstronicPart">
+		<defName>AstronicEye</defName>
+		<label>astronic eye</label>
+		<description>Combining previous Dendrolink limbs as well as what was learned from bionics experiments, this eye is capable of merging both functions of the Astralink and Gaurlink varieties and still manages to be more efficient.</description>
+		<descriptionHyperlinks>
+			<HediffDef>AstronicEye</HediffDef>
+		</descriptionHyperlinks>
+		<costList>
+			<VPE_Eltex MayRequire="vanillaexpanded.vpsycastse">1</VPE_Eltex>
+			<ComponentSpacer>2</ComponentSpacer>
+			<Plasteel>5</Plasteel>
+			<WoodLog>5</WoodLog>
+			<AnimaFiber>10</AnimaFiber>
+		</costList>
+		<statBases>
+		  	<Mass>0.5</Mass>
+		  	<MarketValue>500</MarketValue>
+		   	<WorkToMake>2000</WorkToMake>
+		</statBases>
+	</ThingDef>
+
+	<RecipeDef ParentName="SurgeryInstallBodyPartArtificialBase">
+		<defName>InstallAstronicEye</defName>
+		<label>install an astronic eye</label>
+		<description>Install astronic eye.</description>
+		<descriptionHyperlinks>
+			<ThingDef>AstronicEye</ThingDef>
+			<HediffDef>AstronicEye</HediffDef>
+		</descriptionHyperlinks>
+		<jobString>Installing astronic eye.</jobString>
+		<ingredients>
+		  	<li>
+				<filter>
+					<thingDefs>
+						<li>AstronicEye</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+		  	</li>
+		</ingredients>
+		<fixedIngredientFilter>
+		  	<thingDefs>
+				<li>AstronicEye</li>
+		  	</thingDefs>
+		</fixedIngredientFilter>
+		<appliedOnFixedBodyParts>
+		  	<li>Eye</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>AstronicEye</addsHediff>
+		<skillRequirements>
+		  	<Medicine>10</Medicine>
+		</skillRequirements>
+	</RecipeDef>
+
+	<HediffDef ParentName="AddedBodyPartBase"> 
+		<defName>AstronicEye</defName>
+		<label>astronic eye</label>
+		<description>An installed astronic eye.</description>
+		<descriptionHyperlinks>
+			<ThingDef>AstronicEye</ThingDef>
+		</descriptionHyperlinks>
+		<labelNoun>an astronic eye</labelNoun>
+		<defaultLabelColor>(0, 0.6, 0.4)</defaultLabelColor>
+		<stages>
+			<li>
+				<statOffsets>
+					<PawnBeauty>1</PawnBeauty>
+					<RBSF_NatureConnection MayRequire="Rooboid.Faun">-0.5</RBSF_NatureConnection>
+					<PsychicSensitivity>0.15</PsychicSensitivity>
+					<MeditationFocusGain>0.15</MeditationFocusGain>
+				</statOffsets>
+				<statFactors>
+					<ShootingAccuracyFactor_Long>1.004</ShootingAccuracyFactor_Long>
+					<ShootingAccuracyFactor_Medium>1.002</ShootingAccuracyFactor_Medium>
+					<ShootingAccuracyFactor_Short>0.992</ShootingAccuracyFactor_Short>
+					<ShootingAccuracyFactor_Touch>0.985</ShootingAccuracyFactor_Touch>
+					<MortarMissRadiusFactor>1.2</MortarMissRadiusFactor>
+				</statFactors>
+			</li>
+		</stages>
+		<addedPartProps>
+		  <solid>true</solid>
+		  <partEfficiency>1</partEfficiency>   
+		  <betterThanNatural>true</betterThanNatural>
+		</addedPartProps>
+		<spawnThingOnRemoved>AstronicEye</spawnThingOnRemoved>
+	</HediffDef>
+
+</Defs>

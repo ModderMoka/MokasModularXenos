@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <PawnKindDef ParentName="TribeloxCheifPsyc">
+    <defName>Psylox_MeeleChief</defName>
+    <label>tribal loxchief caster</label>
+    <weaponTags Inherit="False">
+       <li>VPE_EltexMelee</li>
+    </weaponTags>
+  </PawnKindDef>
+
+  <PawnKindDef ParentName="TribeloxCheifPsyc">
+    <defName>Psylox_RangedChief</defName>
+    <label>tribal loxchief caster</label>
+    <weaponTags Inherit="False">
+       <li>NeolithicRangedChief</li>
+    </weaponTags>
+    <disallowedTraits>
+      <li>Brawler</li>
+    </disallowedTraits>
+  </PawnKindDef>
+
+  <PawnKindDef ParentName="TribeloxPsycaster">
+    <defName>Triblox_FireCaster</defName>
+    <label>tribelox flameweaver</label>
+    <modExtensions>
+       <li Class="VanillaPsycastsExpanded.PawnKindAbilityExtension_Psycasts">
+          <implantDef>VPE_PsycastAbilityImplant</implantDef>
+          <initialLevel>1</initialLevel>
+          <statUpgradePoints>2~6</statUpgradePoints>
+          <unlockedPaths>
+             <VPE_Conflagrator>1~4|2~8</VPE_Conflagrator>
+          </unlockedPaths>
+       </li>
+    </modExtensions>
+  </PawnKindDef>
+
+  <PawnKindDef ParentName="TribeloxPsycaster">
+    <defName>Triblox_DeadCaster</defName>
+    <label>tribelox necromancer</label>
+    <modExtensions>
+       <li Class="VanillaPsycastsExpanded.PawnKindAbilityExtension_Psycasts">
+          <implantDef>VPE_PsycastAbilityImplant</implantDef>
+          <initialLevel>1</initialLevel>
+          <statUpgradePoints>2~6</statUpgradePoints>
+          <unlockedPaths>
+             <VPE_Necropath>1~3|2~6</VPE_Necropath>
+          </unlockedPaths>
+       </li>
+    </modExtensions>
+  </PawnKindDef>
+
+  <PawnKindDef ParentName="TribeloxPsycaster">
+    <defName>Triblox_BuffCaster</defName>
+    <label>tribelox cleric</label>
+    <modExtensions>
+       <li Class="VanillaPsycastsExpanded.PawnKindAbilityExtension_Psycasts">
+          <implantDef>VPE_PsycastAbilityImplant</implantDef>
+          <initialLevel>1</initialLevel>
+          <statUpgradePoints>2~6</statUpgradePoints>
+          <unlockedPaths>
+             <VPE_Protector>1~4|2~8</VPE_Protector>
+          </unlockedPaths>
+       </li>
+    </modExtensions>
+  </PawnKindDef>
+
+  <PawnKindDef ParentName="LoxPsycasterBase">
+    <defName>Loxlander_TechCaster</defName>
+    <label>loxlander techmind</label>
+    <modExtensions>
+       <li Class="VanillaPsycastsExpanded.PawnKindAbilityExtension_Psycasts">
+          <implantDef>VPE_PsycastAbilityImplant</implantDef>
+          <initialLevel>1</initialLevel>
+          <statUpgradePoints>2~6</statUpgradePoints>
+          <unlockedPaths>
+             <VPE_Staticlord>1~3|2~5</VPE_Staticlord>
+             <VPE_Technomancer>1~3|2~5</VPE_Technomancer>
+          </unlockedPaths>
+       </li>
+    </modExtensions>
+  </PawnKindDef>
+
+  <PawnKindDef ParentName="LoxPsycasterBase">
+    <defName>Loxlander_BerserkCaster</defName>
+    <label>loxlander warlord</label>
+    <modExtensions>
+       <li Class="VanillaPsycastsExpanded.PawnKindAbilityExtension_Psycasts">
+          <implantDef>VPE_PsycastAbilityImplant</implantDef>
+          <initialLevel>1</initialLevel>
+          <statUpgradePoints>2~6</statUpgradePoints>
+          <unlockedPaths>
+             <VPE_Warlord>1~3|2~5</VPE_Warlord>
+             <VPE_Protector>1~3|2~5</VPE_Protector>
+          </unlockedPaths>
+       </li>
+    </modExtensions>
+  </PawnKindDef>
+
+  <PawnKindDef ParentName="LoxPsycasterBase" MayRequire="Edern.CombatPsycasts">
+    <defName>Loxlander_ForceCaster</defName>
+    <label>loxlander kineticist</label>
+    <modExtensions>
+       <li Class="VanillaPsycastsExpanded.PawnKindAbilityExtension_Psycasts">
+          <implantDef>VPE_PsycastAbilityImplant</implantDef>
+          <initialLevel>1</initialLevel>
+          <statUpgradePoints>2~6</statUpgradePoints>
+          <unlockedPaths>
+             <VPE_Staticlord>1~3|2~5</VPE_Staticlord>
+             <CP_Combat>1~3|2~5</CP_Combat>
+          </unlockedPaths>
+       </li>
+    </modExtensions>
+  </PawnKindDef>
+
+ <!-- <PawnKindDef ParentName="SanguophageBase" MayRequire="VanillaExpanded.VPE.Hemosage">
+   <defName>SanguoCaster</defName>
+   <label>the hemosage</label>
+   <xenotypeSet Inherit="False">
+     <xenotypeChances>
+       <Moka_Hemoloc>999</Moka_Hemoloc>
+     </xenotypeChances>
+   </xenotypeSet>
+   <invNutrition>0.5</invNutrition>
+   <invFoodDef>HemogenPack</invFoodDef>
+   <combatEnhancingDrugsChance>0.1</combatEnhancingDrugsChance>
+   <combatEnhancingDrugsCount>1~2</combatEnhancingDrugsCount>
+   <apparelMoney>500~700</apparelMoney>
+   <techHediffsChance>0.15</techHediffsChance>
+   <techHediffsMoney>0~1800</techHediffsMoney>
+   <techHediffsTags>
+     <li>Advanced</li>
+   </techHediffsTags>
+   <weaponMoney>600~800</weaponMoney>
+   <weaponTags>
+     <li>Gun</li>
+     <li>MedievalMeleeDecent</li>
+   </weaponTags>
+   <apparelAllowHeadgearChance>0.1</apparelAllowHeadgearChance>
+   <apparelTags>
+     <li>IndustrialBasic</li>
+   </apparelTags>
+   <apparelRequired Inherit="False">
+     <li>Apparel_Pants</li>
+   </apparelRequired>
+   <apparelDisallowTags>
+     <li>Western</li>
+   </apparelDisallowTags>
+   <modExtensions>
+      <li Class="VanillaPsycastsExpanded.PawnKindAbilityExtension_Psycasts">
+         <implantDef>VPE_PsycastAbilityImplant</implantDef>
+         <initialLevel>1</initialLevel>
+         <statUpgradePoints>2~6</statUpgradePoints>
+         <unlockedPaths>
+            <VPEH_Hemosage>1~4|2~6</VPEH_Hemosage>
+         </unlockedPaths>
+      </li>
+   </modExtensions>
+ </PawnKindDef> -->
+  
+</Defs>

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <ResearchProjectDef>
+		<defName>DendroLinkBodies</defName>
+		<label>dendro link bodies</label>
+		<tab>MokasMods</tab>
+		<description>Our revered trees should be our guide, let us aim to show our gods we are worthy, by accepting their gifts as part of us.</description>
+		<baseCost>1200</baseCost>
+		<techLevel>Industrial</techLevel>
+		<prerequisites>
+            <li>DomesticationAnimaGrass</li>
+            <li>Prosthetics</li>
+		</prerequisites>
+		<researchViewX>0.00</researchViewX>
+		<researchViewY>0.00</researchViewY>
+    </ResearchProjectDef>
+
+    <ResearchProjectDef>
+		<defName>DendroLinkBionics</defName>
+		<label>dendro link bionics</label>
+		<tab>MokasMods</tab>
+		<description>We must not forget our roots, our past discoveries can yet be made better, through mixing our bodies, our revered trees and our technology.</description>
+		<baseCost>1500</baseCost>
+		<techLevel>Spacer</techLevel>
+		<prerequisites>
+			<li>DendroLinkBodies</li>
+            <li>Bionics</li>
+		</prerequisites>
+		<researchViewX>1.00</researchViewX>
+		<researchViewY>0.00</researchViewY>
+    </ResearchProjectDef>
+
+    <ResearchProjectDef>
+		<defName>PrimitiveMystum</defName>
+		<label>primitive mystum drugs</label>
+		<tab>MokasMods</tab>
+		<description>Our minds can be opened to the truth of the world. By adding Anima Fiber while making some of our drugs, we can expand our awareness and increase psychic ability</description>
+		<baseCost>800</baseCost>
+		<techLevel>Neolithic</techLevel>
+		<prerequisites>
+			<li>DomesticationAnimaGrass</li>
+			<li>PsychoidBrewing</li>
+		</prerequisites>
+		<researchViewX>0.00</researchViewX>
+		<researchViewY>0.70</researchViewY>
+    </ResearchProjectDef>
+
+    <ResearchProjectDef>
+		<defName>RefinedMystum</defName>
+		<label>refined mystum drugs</label>
+		<tab>MokasMods</tab>
+		<description>We've grown beyond imitations of Mystum, and it's time to go beyond it. With use of neutroamine, we can finally draw out the perfect form of Mystum and truly expand our psychic awareness.</description>
+		<baseCost>1000</baseCost>
+		<techLevel>Industrial</techLevel>
+		<prerequisites>
+			<li>DomesticationAnimaGrass</li>
+			<li>DrugProduction</li>
+		</prerequisites>
+		<researchViewX>1.00</researchViewX>
+		<researchViewY>0.70</researchViewY>
+    </ResearchProjectDef>
+
+</Defs>

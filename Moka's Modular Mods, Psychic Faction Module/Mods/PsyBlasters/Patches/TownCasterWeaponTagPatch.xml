@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+
+	<Operation Class="PatchOperationConditional">
+		<xpath>Defs/PawnKindDef[@Name="LoxPsycasterBase"]</xpath>
+		<match Class="PatchOperationAdd">
+            <xpath>Defs/PawnKindDef[@Name="LoxPsycasterBase"]</xpath>
+            <value>
+				<weaponTags Inherit="False">
+				  <li>BasePsychicGun</li>
+				</weaponTags>
+				<weaponMoney>2000</weaponMoney>
+            </value>
+		</match>
+	</Operation>
+	
+</Patch>
