@@ -1,25 +1,25 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 
-  <FactionDef ParentName="FactionBase" Name="OutLox_FactionBase" Abstract="True">
-    <pawnSingular>loxlander</pawnSingular>
-    <pawnsPlural>loxlanders</pawnsPlural>
-    <categoryTag>Outlander</categoryTag>
+  <FactionDef ParentName="FactionBase" Name="LoxspaceFactionBase" Abstract="True">
+    <pawnSingular>spacelok</pawnSingular>
+    <pawnsPlural>spacelox</pawnsPlural>
+    <categoryTag>Spacer</categoryTag>
     <listOrderPriority>30</listOrderPriority>
     <settlementGenerationWeight>1</settlementGenerationWeight>
     <requiredCountAtGameStart>1</requiredCountAtGameStart>
     <canMakeRandomly>true</canMakeRandomly>
     <canSiege>true</canSiege>
     <canStageAttacks>true</canStageAttacks>
-    <techLevel>Industrial</techLevel>
+    <techLevel>Spacer</techLevel>
     <factionNameMaker>NamerFactionOutlander</factionNameMaker>
     <settlementNameMaker>NamerSettlementOutlander</settlementNameMaker>
-    <allowedCultures><li>Rustican</li></allowedCultures>
+    <allowedCultures><li>Astropolitan</li></allowedCultures>
     <structureMemeWeights>
-      <Structure_TheistEmbodied MayRequire="Ludeon.RimWorld.Ideology">1</Structure_TheistEmbodied>
+      <Structure_Archist MayRequire="Ludeon.RimWorld.Ideology">3</Structure_Archist>
       <Structure_TheistAbstract MayRequire="Ludeon.RimWorld.Ideology">2</Structure_TheistAbstract>
+      <Structure_TheistEmbodied MayRequire="Ludeon.RimWorld.Ideology">1</Structure_TheistEmbodied>
       <Structure_Ideological MayRequire="Ludeon.RimWorld.Ideology">1</Structure_Ideological>
-      <Structure_Archist MayRequire="Ludeon.RimWorld.Ideology">1</Structure_Archist>
       <Structure_OriginChristian MayRequire="Ludeon.RimWorld.Ideology">1</Structure_OriginChristian>
       <Structure_OriginIslamic MayRequire="Ludeon.RimWorld.Ideology">1</Structure_OriginIslamic>
       <Structure_OriginHindu MayRequire="Ludeon.RimWorld.Ideology">1</Structure_OriginHindu>
@@ -41,13 +41,13 @@
         <categories>
           <li>Outlander</li>
         </categories>
-        <commonality>0.95</commonality>
+        <commonality>0.65</commonality>
       </li>
       <li>
         <categories>
           <li>Offworld</li>
         </categories>
-        <commonality>0.05</commonality>
+        <commonality>0.35</commonality>
       </li>
     </backstoryFilters>
     <leaderTitle>prime loxlander</leaderTitle>
@@ -162,71 +162,6 @@
       </li>
     </pawnGroupMakers>
     <settlementTexturePath>World/WorldObjects/DefaultSettlement</settlementTexturePath>
-  </FactionDef>
-  
-  <ThingSetMakerDef>
-    <defName>OutlanderRaidLootMaker</defName>
-    <root Class="ThingSetMaker_MarketValue">
-      <fixedParams>
-        <filter>
-          <thingDefs>
-            <li>Silver</li>
-            <li>MedicineIndustrial</li>
-            <li>ComponentIndustrial</li>
-            <li>MealSurvivalPack</li>
-            <li>Neutroamine</li>
-          </thingDefs>
-        </filter>
-      </fixedParams>
-    </root>
-  </ThingSetMakerDef>
-  
-  <FactionDef ParentName="OutLox_FactionBase">
-    <defName>Moka_OutLoxCivil</defName>
-    <label>civil loxlander union</label>
-    <description>These people have lived here for decades or centuries, and have lost most of the technology that brought them to this world. They usually work with simple machinery and defend themselves with advanced gunpowder weapons.\n\nThey are concerned with the practical matters of trade, trust, and survival.\n\nThis particular group holds civil behavior in high regard.</description>
-    <factionIconPath>Moka/World/WorldObjects/LoxTown</factionIconPath>
-    <colorSpectrum>
-      <li>(0.01, 0.63, 0.84)</li>
-      <li>(0.05, 0.29, 0.38)</li>
-    </colorSpectrum>
-    <requiredMemes>
-      <li MayRequire="VanillaExpanded.VMemesE">VME_Emancipation</li>
-    </requiredMemes>
-    <disallowedMemes>
-      <li MayRequire="Ludeon.RimWorld.Ideology">Structure_Animist</li>
-      <li MayRequire="Ludeon.RimWorld.Ideology">Nudism</li>
-      <li MayRequire="Ludeon.RimWorld.Ideology">Blindsight</li>
-    </disallowedMemes>
-    <xenotypeSet>
-      <xenotypeChances>
-        <VRE_Gauranlenkin MayRequire="vanillaracesexpanded.phytokin">0.005</VRE_Gauranlenkin>
-      </xenotypeChances>
-    </xenotypeSet>
-    <maxConfigurableAtWorldCreation>9999</maxConfigurableAtWorldCreation>
-    <configurationListOrderPriority>10</configurationListOrderPriority>
-  </FactionDef>
-  
-  <FactionDef ParentName="OutLox_FactionBase">
-    <defName>Moka_OutLoxRough</defName>
-    <label>uneasy loxlander union</label>
-    <description>These people have lived here for decades or centuries, and have lost most of the technology that brought them to this world. They usually work with simple machinery and defend themselves with advanced gunpowder weapons.\n\nThey are concerned with the practical matters of trade, trust, and survival.\n\nThis particular group has a streak of barbarity in them.</description>
-    <factionIconPath>Moka/World/WorldObjects/RoughLoxTown</factionIconPath>
-    <colorSpectrum>
-      <li>(0.19, 0.33, 0.73)</li>
-      <li>(0, 0.34, 0.81)</li>
-    </colorSpectrum>
-    <naturalEnemy>true</naturalEnemy>
-    <requiredMemes>
-      <li MayRequire="VanillaExpanded.VMemesE">VME_Emancipation</li>
-    </requiredMemes>
-    <disallowedMemes>
-      <li MayRequire="Ludeon.RimWorld.Ideology">Structure_Animist</li>
-      <li MayRequire="Ludeon.RimWorld.Ideology">Nudism</li>
-      <li MayRequire="Ludeon.RimWorld.Ideology">Blindsight</li>
-    </disallowedMemes>
-    <maxConfigurableAtWorldCreation>9999</maxConfigurableAtWorldCreation>
-    <configurationListOrderPriority>20</configurationListOrderPriority>
   </FactionDef>
   
 </Defs>

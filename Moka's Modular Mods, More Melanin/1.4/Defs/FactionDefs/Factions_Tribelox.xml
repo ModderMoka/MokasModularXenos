@@ -3,7 +3,7 @@
 
 <!-- Tribal -->
 
-  <FactionDef ParentName="FactionBase" Name="LoxTribeBase" Abstract="True">
+  <FactionDef ParentName="FactionBase" Name="TribeLox_FactionBase" Abstract="True">
     <pawnSingular>tribeslox</pawnSingular>
     <pawnsPlural>tribeslox</pawnsPlural>
     <categoryTag>Tribal</categoryTag>
@@ -12,17 +12,18 @@
     <requiredCountAtGameStart>1</requiredCountAtGameStart>
     <canMakeRandomly>true</canMakeRandomly>
     <canStageAttacks>true</canStageAttacks>
-    <factionIconPath>World/WorldObjects/LoxVillage</factionIconPath>
+    <factionIconPath>Moka/World/WorldObjects/LoxVillage</factionIconPath>
     <techLevel>Neolithic</techLevel>
     <factionNameMaker>NamerFactionTribal</factionNameMaker>
     <settlementNameMaker>NamerSettlementTribal</settlementNameMaker>
     <allowedCultures><li>Corunan</li></allowedCultures>
     <xenotypeSet>
       <xenotypeChances>
-        <Moka_Baseloc>0.5</Moka_Baseloc>
+        <Moka_Baseloc>0.75</Moka_Baseloc>
         <Moka_Pawloc>0.15</Moka_Pawloc>
         <Moka_Wildlox>0.1</Moka_Wildlox>
-        <Dirtmole>0.025</Dirtmole>
+        <Impid>0.025</Impid>
+        <Neanderthal>0.025</Neanderthal>
       </xenotypeChances>
     </xenotypeSet>
 		<requiredMemes>
@@ -94,8 +95,20 @@
     </backstoryFilters>
     <leaderTitle>chieflox</leaderTitle>
     <fixedLeaderKinds>
-        <li>Tribelox_Leader</li>
+        <li>Moka_TribeLox_Leader</li>
     </fixedLeaderKinds>
+    <caravanTraderKinds>
+      <li>Caravan_Neolithic_BulkGoods</li>
+      <li>Caravan_Neolithic_WarMerchant</li>
+      <li>Caravan_Neolithic_Slaver</li>
+      <li>Caravan_Neolithic_ShamanMerchant</li>
+    </caravanTraderKinds>
+    <visitorTraderKinds>
+      <li>Visitor_Neolithic_Standard</li>
+    </visitorTraderKinds>
+    <baseTraderKinds>
+      <li>Base_Neolithic_Standard</li>
+    </baseTraderKinds>
     <allowedArrivalTemperatureRange>-40~45</allowedArrivalTemperatureRange>
     <raidCommonalityFromPointsCurve>
       <points>
@@ -119,13 +132,13 @@
         <commonality>100</commonality>
         <options>
           <Tribal_Penitent>5</Tribal_Penitent>
-          <Tribelox_Warrior>5</Tribelox_Warrior>
+          <Moka_Tribelox_Warrior>5</Moka_Tribelox_Warrior>
           <Tribal_Archer>10</Tribal_Archer>
           <Tribal_Hunter>10</Tribal_Hunter>
           <Tribal_HeavyArcher>10</Tribal_HeavyArcher>
           <Tribal_Berserker>5</Tribal_Berserker>
-          <Tribelox_ChiefRanged>3</Tribelox_ChiefRanged>
-          <Tribelox_ChiefMelee>1.5</Tribelox_ChiefMelee>
+          <Moka_Tribelox_ChiefRanged>3</Moka_Tribelox_ChiefRanged>
+          <Moka_Tribelox_ChiefMelee>1.5</Moka_Tribelox_ChiefMelee>
         </options>
       </li>
       <li>
@@ -136,7 +149,7 @@
           <Tribal_Archer>10</Tribal_Archer>
           <Tribal_Hunter>10</Tribal_Hunter>
           <Tribal_HeavyArcher>10</Tribal_HeavyArcher>
-          <Tribelox_ChiefRanged>5</Tribelox_ChiefRanged>
+          <Moka_Tribelox_ChiefRanged>5</Moka_Tribelox_ChiefRanged>
         </options>
       </li>
       <li>
@@ -145,9 +158,9 @@
         <commonality>60</commonality>
         <options>
           <Tribal_Penitent>10</Tribal_Penitent>
-          <Tribelox_Warrior>10</Tribelox_Warrior>
+          <Moka_Tribelox_Warrior>10</Moka_Tribelox_Warrior>
           <Tribal_Berserker>10</Tribal_Berserker>
-          <Tribelox_ChiefMelee>5</Tribelox_ChiefMelee>
+          <Moka_Tribelox_ChiefMelee>5</Moka_Tribelox_ChiefMelee>
       </options>
       </li>
       <li>
@@ -157,33 +170,33 @@
         <options>
           <Tribal_Breacher>5</Tribal_Breacher>
           <Tribal_Penitent>5</Tribal_Penitent>
-          <Tribelox_Warrior>5</Tribelox_Warrior>
+          <Moka_Tribelox_Warrior>5</Moka_Tribelox_Warrior>
           <Tribal_Archer>10</Tribal_Archer>
-          <Tribelox_Hunter>10</Tribelox_Hunter>
+          <Moka_Tribelox_Hunter>10</Moka_Tribelox_Hunter>
           <Tribal_HeavyArcher>10</Tribal_HeavyArcher>
           <Tribal_Berserker>5</Tribal_Berserker>
-          <Tribelox_ChiefRanged>3</Tribelox_ChiefRanged>
-          <Tribelox_ChiefMelee>1.5</Tribelox_ChiefMelee>
+          <Moka_Tribelox_ChiefRanged>3</Moka_Tribelox_ChiefRanged>
+          <Moka_Tribelox_ChiefMelee>1.5</Moka_Tribelox_ChiefMelee>
       </options>
       </li>
       <li>
         <!-- Peaceful -->
         <kindDef>Peaceful</kindDef>
         <options>
-          <Tribelox_Warrior>20</Tribelox_Warrior>
+          <Moka_Tribelox_Warrior>20</Moka_Tribelox_Warrior>
           <Tribal_Child MayRequire="Ludeon.RimWorld.Biotech">10</Tribal_Child>
           <Tribal_Archer>10</Tribal_Archer>
           <Tribal_Hunter>10</Tribal_Hunter>
           <Tribal_HeavyArcher>10</Tribal_HeavyArcher>
           <Tribal_Berserker>5</Tribal_Berserker>
-          <Tribelox_ChiefRanged>3</Tribelox_ChiefRanged>
-          <Tribelox_ChiefMelee>1.5</Tribelox_ChiefMelee>
+          <Moka_Tribelox_ChiefRanged>3</Moka_Tribelox_ChiefRanged>
+          <Moka_Tribelox_ChiefMelee>1.5</Moka_Tribelox_ChiefMelee>
         </options>
       </li>
       <li>
         <kindDef>Trader</kindDef>
         <traders>
-          <Tribelox_Trader>1</Tribelox_Trader>
+          <Moka_Tribelox_Trader>1</Moka_Tribelox_Trader>
         </traders>
         <carriers>
           <Muffalo>6</Muffalo>
@@ -192,7 +205,7 @@
           <Elephant>2</Elephant>
         </carriers>
         <guards>
-          <Tribelox_Warrior>7</Tribelox_Warrior>
+          <Moka_Tribelox_Warrior>7</Moka_Tribelox_Warrior>
           <Tribal_Archer>10</Tribal_Archer>
           <Tribal_Hunter>10</Tribal_Hunter>
           <Tribal_HeavyArcher>10</Tribal_HeavyArcher>
@@ -202,12 +215,12 @@
       <li>
         <kindDef>Settlement</kindDef>
         <options>
-          <Tribelox_Warrior>7</Tribelox_Warrior>
+          <Moka_Tribelox_Warrior>7</Moka_Tribelox_Warrior>
           <Tribal_Archer>10</Tribal_Archer>
           <Tribal_Hunter>10</Tribal_Hunter>
           <Tribal_HeavyArcher>10</Tribal_HeavyArcher>
           <Tribal_Berserker>7</Tribal_Berserker>
-          <Tribelox_ChiefRanged>10</Tribelox_ChiefRanged>
+          <Moka_Tribelox_ChiefRanged>10</Moka_Tribelox_ChiefRanged>
         </options>
       </li>
       <li>
@@ -216,7 +229,7 @@
           <Tribal_Archer>10</Tribal_Archer>
           <Tribal_Hunter>10</Tribal_Hunter>
           <Tribal_HeavyArcher>10</Tribal_HeavyArcher>
-          <Tribelox_ChiefRanged>10</Tribelox_ChiefRanged>
+          <Moka_Tribelox_ChiefRanged>10</Moka_Tribelox_ChiefRanged>
         </options>
       </li>
       <li MayRequire="Ludeon.RimWorld.Ideology">
@@ -267,45 +280,13 @@
     </root>
   </ThingSetMakerDef>
   
-  <FactionDef ParentName="LoxTribeBase">
-    <defName>TribeCivilLox</defName>
+  <FactionDef ParentName="TribeLox_FactionBase">
+    <defName>Moka_TribeLoxCivil</defName>
     <label>gentle lox tribe</label>
     <description>These people have been here a very long time. Maybe their ancestors crashed here a thousand years ago. Maybe they survived some cataclysm that destroyed a technological civilization here. In any case, the tribals are mostly nomadic people who live off the land using primitive tools and weapons.\n\nDespite their apparent technological weakness, the tribals can be dangerous enemies and valuable friends because of their skill with low-tech warfare, their numbers, and their hardiness.\n\nThis particular tribe pursues a gentle way of life where they can. They are quite open to trade and alliances, even with strange peoples.</description>
     <colorSpectrum>
-      <li>(0.13, 0.59, 0.95)</li>
-      <li>(0.56, 0.79, 0.98)</li>
-    </colorSpectrum>
-		<requiredMemes>
-			<li MayRequire="Ludeon.RimWorld.Ideology">Collectivist</li>
-		</requiredMemes>
-    <disallowedMemes>
-      <li MayRequire="Ludeon.RimWorld.Ideology">PainIsVirtue</li>
-      <li MayRequire="Ludeon.RimWorld.Ideology">Nudism</li>
-    </disallowedMemes>
-    <caravanTraderKinds>
-      <li>Caravan_Neolithic_BulkGoods</li>
-      <li>Caravan_Neolithic_WarMerchant</li>
-      <li>Caravan_Neolithic_Slaver</li>
-      <li>Caravan_Neolithic_ShamanMerchant</li>
-    </caravanTraderKinds>
-    <visitorTraderKinds>
-      <li>Visitor_Neolithic_Standard</li>
-    </visitorTraderKinds>
-    <baseTraderKinds>
-      <li>Base_Neolithic_Standard</li>
-    </baseTraderKinds>
-    <maxConfigurableAtWorldCreation>9999</maxConfigurableAtWorldCreation>
-    <configurationListOrderPriority>30</configurationListOrderPriority>
-  </FactionDef>
-
-  <FactionDef ParentName="LoxTribeBase">
-    <defName>TribeRoughLox</defName>
-    <label>uneasy lox tribe</label>
-    <description>These people have been here a very long time. Maybe their ancestors crashed here a thousand years ago. Maybe they survived some cataclysm that destroyed a technological civilization here. In any case, the tribals are mostly nomadic people who live off the land using primitive tools and weapons.\n\nDespite their apparent technological weakness, the tribals can be dangerous enemies and valuable friends because of their skill with low-tech warfare, their numbers, and their hardiness.\n\nThis particular tribe values warlike dominance; it may be difficult to turn them into an ally.</description>
-    <factionIconPath>World/WorldObjects/RoughLoxVillage</factionIconPath>
-    <colorSpectrum>
-      <li>(0.3, 0.82, 0.88)</li>
-      <li>(0, 0.74, 0.83)</li>
+      <li>(0.09, 0.25, 0.02)</li>
+      <li>(0.22, 0.35, 0.30)</li>
     </colorSpectrum>
 		<requiredMemes>
 			<li MayRequire="Ludeon.RimWorld.Ideology">Guilty</li>
@@ -314,20 +295,29 @@
       <li MayRequire="Ludeon.RimWorld.Ideology">PainIsVirtue</li>
       <li MayRequire="Ludeon.RimWorld.Ideology">Nudism</li>
     </disallowedMemes>
-    <caravanTraderKinds>
-      <li>Caravan_Neolithic_BulkGoods</li>
-      <li>Caravan_Neolithic_WarMerchant</li>
-      <li>Caravan_Neolithic_Slaver</li>
-      <li>Caravan_Neolithic_ShamanMerchant</li>
-    </caravanTraderKinds>
-    <visitorTraderKinds>
-      <li>Visitor_Neolithic_Standard</li>
-    </visitorTraderKinds>
-    <baseTraderKinds>
-      <li>Base_Neolithic_Standard</li>
-    </baseTraderKinds>
     <maxConfigurableAtWorldCreation>9999</maxConfigurableAtWorldCreation>
-    <configurationListOrderPriority>40</configurationListOrderPriority>
+    <configurationListOrderPriority>51</configurationListOrderPriority>
+  </FactionDef>
+
+  <FactionDef ParentName="TribeLox_FactionBase">
+    <defName>Moka_TribeLoxRough</defName>
+    <label>uneasy lox tribe</label>
+    <description>These people have been here a very long time. Maybe their ancestors crashed here a thousand years ago. Maybe they survived some cataclysm that destroyed a technological civilization here. In any case, the tribals are mostly nomadic people who live off the land using primitive tools and weapons.\n\nDespite their apparent technological weakness, the tribals can be dangerous enemies and valuable friends because of their skill with low-tech warfare, their numbers, and their hardiness.\n\nThis particular tribe values warlike dominance; it may be difficult to turn them into an ally.</description>
+    <factionIconPath>Moka/World/WorldObjects/RoughLoxVillage</factionIconPath>
+    <colorSpectrum>
+      <li>(0.82, 0.69, 0.64)</li>
+      <li>(0.47, 0.44, 0.20)</li>
+    </colorSpectrum>
+    <naturalEnemy>true</naturalEnemy>
+		<requiredMemes>
+			<li MayRequire="Ludeon.RimWorld.Ideology">Guilty</li>
+		</requiredMemes>
+    <disallowedMemes>
+      <li MayRequire="Ludeon.RimWorld.Ideology">PainIsVirtue</li>
+      <li MayRequire="Ludeon.RimWorld.Ideology">Nudism</li>
+    </disallowedMemes>
+    <maxConfigurableAtWorldCreation>9999</maxConfigurableAtWorldCreation>
+    <configurationListOrderPriority>52</configurationListOrderPriority>
   </FactionDef>
 
 <!-- Tribal -->

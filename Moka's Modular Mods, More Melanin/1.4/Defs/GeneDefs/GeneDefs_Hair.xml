@@ -2,10 +2,10 @@
 <Defs>
 
 	<GeneDef>
-		<defName>Hair_Moka_AfroTexture</defName>
+		<defName>Moka_AfroTextureHair</defName>
 		<label>afro texture</label>
 		<description>Carriers of this gene have any of the afrotextured hairs.</description>
-		<iconPath>UI/GeneIcons/AfroTextureHair</iconPath>
+		<iconPath>Moka/UI/GeneIcons/AfroTextureHair</iconPath>
 		<displayOrderInCategory>60</displayOrderInCategory>
 	    <selectionWeightFactorDarkSkin>1</selectionWeightFactorDarkSkin>
 		<hairTagFilter>
